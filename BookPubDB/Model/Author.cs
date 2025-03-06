@@ -2,7 +2,7 @@
 
 namespace BookPubDB.Model;
 
-public class Author
+public class Author : IItem
 {
     public int Id { get; set; }
 
@@ -10,5 +10,5 @@ public class Author
 
     public string LastName { get; set; } = null!;
     
-    public List<Book> Books { get; set; } = new();
+    public List<Book> Books { get; set; } = [];
 }

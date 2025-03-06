@@ -40,8 +40,9 @@ namespace BookPubDB.Repositories
 
             return GetSuccessState(book, changes);
         }
-        public async override Task<bool> Exists(PublisherContext context, int id)
+        public async override Task<bool> Exists(int? id)
         {
+            PublisherContext context = new();
             return context.Books.Any(x => x.Id == id);
         }
         public async override Task<List<Book>> GetAllAsync(PublisherContext context)
@@ -52,6 +53,8 @@ namespace BookPubDB.Repositories
         {
             Book? book = await context.Books
                 .Include(c => c.Author)
+                .Include(b => b.Cover)
+                .ThenInclude(d => d.Artists)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
             return book;

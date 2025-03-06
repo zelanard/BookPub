@@ -2,7 +2,7 @@
 
 namespace BookPubDB.Model;
 
-public class Book
+public class Book : IItem
 {
     public int Id { get; set; }
     public string Title { get; set; } = null!;
@@ -10,5 +10,5 @@ public class Book
     public decimal BasePrice { get; set; }
     public Author Author { get; set; } = null!;
     public int AuthorId { get; set; }
-    //public Cover Cover { get; set; }
+    public Cover Cover { get; set; } = null!;
 }

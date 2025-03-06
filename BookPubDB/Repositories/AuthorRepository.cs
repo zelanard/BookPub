@@ -43,8 +43,9 @@ namespace BookPubDB.Repositories
             return GetSuccessState(author, changes);
         }
 
-        public async override Task<bool> Exists(PublisherContext context, int id)
+        public async override Task<bool> Exists(int? id)
         {
+            PublisherContext context = new();
             return context.Authors.Any(x => x.Id == id);
         }
 

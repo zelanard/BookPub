@@ -27,6 +27,8 @@ builder.Services.AddControllers()
     });
 builder.Services.AddScoped<IRepository<Author>, AuthorRepository>();
 builder.Services.AddScoped<IRepository<Book>, BookRepository>();
+builder.Services.AddScoped<IRepository<Cover>, CoverRepository>();
+builder.Services.AddScoped<IRepository<Artist>, ArtistRepository>();
 
 var app = builder.Build();
 

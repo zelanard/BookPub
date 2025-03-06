@@ -2,6 +2,10 @@
 
 namespace WebAPIDemo.Controllers
 {
+    /// <summary>
+    /// <c>IActionController</c> provides access to the general http requests for dependency injection purposes.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public interface IActionController<T>
     {
         public IActionResult GetAll();

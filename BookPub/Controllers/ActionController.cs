@@ -1,26 +1,25 @@
-﻿using BookPubDB.Data;
-using BookPubDB.Model.Enums;
+﻿using BookPub.Filters.ActionFilters;
+using BookPubDB.Data;
 using BookPubDB.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using WebAPIDemo.Controllers;
-using Utils;
 
 namespace BookPub.Controllers
 {
     /// <summary>
-    /// <c>ActionController <typeparamref name="TType"/></c> models a default controller which handles default behaviour.
+    /// <c>ActionController</c> models a default controller which handles default behaviour on http requests.
     /// </summary>
     /// <typeparam name="TType"></typeparam>
     public abstract class ActionController<TType> : ControllerBase, IActionController<TType> where TType : class
     {
         protected PublisherContext Context;
         protected IRepository<TType> Repository;
-
+        protected HttpResponseGenerator<TType> ResponseHandler;
         public ActionController(PublisherContext context, IRepository<TType> repo)
         {
             Context = context;
             Repository = repo;
+            ResponseHandler = new HttpResponseGenerator<TType>();
         }
 
         /// <summary>
@@ -34,16 +33,7 @@ namespace BookPub.Controllers
         public virtual IActionResult Create([FromBody] object item)
         {
             TType? result = this.Repository.CreateAsync(this.Context, item).Result;
-
-            if (result != null)
-            {
-                return GetIActionResult(result, ActionResultStatus.Created);
-            }
-            else
-            {
-                return GetIActionResult(result, ActionResultStatus.BadRequest);
-            }
-
+            return ResponseHandler.Created(result);
         }
 
         /// <summary>
@@ -57,15 +47,7 @@ namespace BookPub.Controllers
         public virtual IActionResult Delete(int id)
         {
             TType? result = this.Repository.DeleteAsync(this.Context, id).Result;
-
-            if (result != null)
-            {
-                return GetIActionResult(result, ActionResultStatus.Deleted);
-            }
-            else
-            {
-                return GetIActionResult(result, ActionResultStatus.BadRequest);
-            }
+            return ResponseHandler.Deleted(result);
         }
 
         /// <summary>
@@ -80,15 +62,7 @@ namespace BookPub.Controllers
         async public virtual Task<IActionResult> Get(int id)
         {
             TType? result = this.Repository.GetByIdAsync(this.Context, id).Result;
-
-            if (result != null)
-            {
-                return GetIActionResult(result, ActionResultStatus.Ok);
-            }
-            else
-            {
-                return GetIActionResult(result, ActionResultStatus.BadRequest);
-            }
+            return ResponseHandler.Ok(result);
         }
 
         /// <summary>
@@ -101,15 +75,7 @@ namespace BookPub.Controllers
         public virtual IActionResult GetAll()
         {
             List<TType> result = this.Repository.GetAllAsync(this.Context).Result;
-
-            if (result.Count > 0)
-            {
-                return GetIActionResult(result, ActionResultStatus.Ok);
-            }
-            else
-            {
-                return GetIActionResult(result, ActionResultStatus.BadRequest);
-            }
+            return ResponseHandler.Ok(result);
         }
 
         /// <summary>
@@ -124,42 +90,7 @@ namespace BookPub.Controllers
         public virtual IActionResult Update(int id, [FromBody] object item)
         {
             TType? result = this.Repository.UpdateAsync(this.Context, id, item).Result;
-
-            if (result != null)
-            {
-                return GetIActionResult(result, ActionResultStatus.Updated);
-            }
-            else
-            {
-                return GetIActionResult(result, ActionResultStatus.BadRequest);
-            }
-        }
-
-        /// <summary>
-        /// Generates an <see cref="IActionResult"/>
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="ars"></param>
-        /// <returns>An IActionResult</returns>
-        protected IActionResult GetIActionResult(object? type, ActionResultStatus ars)
-        {
-            switch (ars)
-            {
-                case ActionResultStatus.Created:
-                    return Created("", type);
-
-                case ActionResultStatus.Deleted:
-                    return StatusCode((int)ActionResultStatus.Deleted, new { message = "Deleted", type });
-                
-                case ActionResultStatus.Updated:
-                    return StatusCode((int)ActionResultStatus.Updated, new { message = "Updated", type });
-                
-                case ActionResultStatus.Ok:
-                    return Ok(type);
-                
-                default:
-                    return NotFound($"Invalid Operation");
-            }
+            return ResponseHandler.Update(result);
         }
     }
 }

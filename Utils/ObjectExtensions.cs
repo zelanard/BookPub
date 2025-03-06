@@ -8,6 +8,7 @@ namespace Utils
         {
             WriteIndented = true
         };
+
         public static string ToJson(this object obj, bool indented = false)
         {
             if (indented)

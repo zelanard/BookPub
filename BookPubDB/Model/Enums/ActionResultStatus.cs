@@ -1,5 +1,8 @@
 ﻿namespace BookPubDB.Model.Enums
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public enum ActionResultStatus
     {
         Ok = 200,
