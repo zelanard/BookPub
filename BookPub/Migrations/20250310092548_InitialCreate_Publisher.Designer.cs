@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookPub.Migrations
 {
     [DbContext(typeof(PublisherContext))]
-    [Migration("20250228205130_initial")]
-    partial class initial
+    [Migration("20250310092548_InitialCreate_Publisher")]
+    partial class InitialCreate_Publisher
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,26 +27,26 @@ namespace BookPub.Migrations
 
             modelBuilder.Entity("ArtistCover", b =>
                 {
-                    b.Property<int>("ArtistsArtistId")
+                    b.Property<int>("ArtistsId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CoversCoverId")
+                    b.Property<int>("CoversId")
                         .HasColumnType("int");
 
-                    b.HasKey("ArtistsArtistId", "CoversCoverId");
+                    b.HasKey("ArtistsId", "CoversId");
 
-                    b.HasIndex("CoversCoverId");
+                    b.HasIndex("CoversId");
 
                     b.ToTable("ArtistCover");
                 });
 
             modelBuilder.Entity("BookPubDB.Model.Artist", b =>
                 {
-                    b.Property<int>("ArtistId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArtistId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -56,18 +56,18 @@ namespace BookPub.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("ArtistId");
+                    b.HasKey("Id");
 
-                    b.ToTable("Artist");
+                    b.ToTable("Artists");
                 });
 
             modelBuilder.Entity("BookPubDB.Model.Author", b =>
                 {
-                    b.Property<int>("AuthorId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuthorId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("FirstName")
                         .IsRequired()
@@ -77,18 +77,18 @@ namespace BookPub.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("AuthorId");
+                    b.HasKey("Id");
 
                     b.ToTable("Authors");
                 });
 
             modelBuilder.Entity("BookPubDB.Model.Book", b =>
                 {
-                    b.Property<int>("BookId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("BookId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("AuthorId")
                         .HasColumnType("int");
@@ -103,7 +103,7 @@ namespace BookPub.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("BookId");
+                    b.HasKey("Id");
 
                     b.HasIndex("AuthorId");
 
@@ -112,11 +112,11 @@ namespace BookPub.Migrations
 
             modelBuilder.Entity("BookPubDB.Model.Cover", b =>
                 {
-                    b.Property<int>("CoverId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CoverId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("BookId")
                         .HasColumnType("int");
@@ -128,25 +128,25 @@ namespace BookPub.Migrations
                     b.Property<bool>("DigitalOnly")
                         .HasColumnType("bit");
 
-                    b.HasKey("CoverId");
+                    b.HasKey("Id");
 
                     b.HasIndex("BookId")
                         .IsUnique();
 
-                    b.ToTable("Cover");
+                    b.ToTable("Covers");
                 });
 
             modelBuilder.Entity("ArtistCover", b =>
                 {
                     b.HasOne("BookPubDB.Model.Artist", null)
                         .WithMany()
-                        .HasForeignKey("ArtistsArtistId")
+                        .HasForeignKey("ArtistsId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("BookPubDB.Model.Cover", null)
                         .WithMany()
-                        .HasForeignKey("CoversCoverId")
+                        .HasForeignKey("CoversId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

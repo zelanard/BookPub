@@ -1,5 +1,4 @@
-﻿using BookPub.Filters.ActionFilters;
-using BookPubDB.Data;
+﻿using BookPubDB.Data;
 using BookPubDB.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using WebAPIDemo.Controllers;

@@ -6,44 +6,44 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace BookPub.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class InitialCreate_Publisher : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Artist",
+                name: "Artists",
                 columns: table => new
                 {
-                    ArtistId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Artist", x => x.ArtistId);
+                    table.PrimaryKey("PK_Artists", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Authors",
                 columns: table => new
                 {
-                    AuthorId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Authors", x => x.AuthorId);
+                    table.PrimaryKey("PK_Authors", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Books",
                 columns: table => new
                 {
-                    BookId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     PublishDate = table.Column<DateOnly>(type: "date", nullable: false),
@@ -52,20 +52,20 @@ namespace BookPub.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Books", x => x.BookId);
+                    table.PrimaryKey("PK_Books", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Books_Authors_AuthorId",
                         column: x => x.AuthorId,
                         principalTable: "Authors",
-                        principalColumn: "AuthorId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cover",
+                name: "Covers",
                 columns: table => new
                 {
-                    CoverId = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     DesignIdeas = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DigitalOnly = table.Column<bool>(type: "bit", nullable: false),
@@ -73,12 +73,12 @@ namespace BookPub.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cover", x => x.CoverId);
+                    table.PrimaryKey("PK_Covers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Cover_Books_BookId",
+                        name: "FK_Covers_Books_BookId",
                         column: x => x.BookId,
                         principalTable: "Books",
-                        principalColumn: "BookId",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -86,30 +86,30 @@ namespace BookPub.Migrations
                 name: "ArtistCover",
                 columns: table => new
                 {
-                    ArtistsArtistId = table.Column<int>(type: "int", nullable: false),
-                    CoversCoverId = table.Column<int>(type: "int", nullable: false)
+                    ArtistsId = table.Column<int>(type: "int", nullable: false),
+                    CoversId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ArtistCover", x => new { x.ArtistsArtistId, x.CoversCoverId });
+                    table.PrimaryKey("PK_ArtistCover", x => new { x.ArtistsId, x.CoversId });
                     table.ForeignKey(
-                        name: "FK_ArtistCover_Artist_ArtistsArtistId",
-                        column: x => x.ArtistsArtistId,
-                        principalTable: "Artist",
-                        principalColumn: "ArtistId",
+                        name: "FK_ArtistCover_Artists_ArtistsId",
+                        column: x => x.ArtistsId,
+                        principalTable: "Artists",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_ArtistCover_Cover_CoversCoverId",
-                        column: x => x.CoversCoverId,
-                        principalTable: "Cover",
-                        principalColumn: "CoverId",
+                        name: "FK_ArtistCover_Covers_CoversId",
+                        column: x => x.CoversId,
+                        principalTable: "Covers",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ArtistCover_CoversCoverId",
+                name: "IX_ArtistCover_CoversId",
                 table: "ArtistCover",
-                column: "CoversCoverId");
+                column: "CoversId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_AuthorId",
@@ -117,8 +117,8 @@ namespace BookPub.Migrations
                 column: "AuthorId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Cover_BookId",
-                table: "Cover",
+                name: "IX_Covers_BookId",
+                table: "Covers",
                 column: "BookId",
                 unique: true);
         }
@@ -130,10 +130,10 @@ namespace BookPub.Migrations
                 name: "ArtistCover");
 
             migrationBuilder.DropTable(
-                name: "Artist");
+                name: "Artists");
 
             migrationBuilder.DropTable(
-                name: "Cover");
+                name: "Covers");
 
             migrationBuilder.DropTable(
                 name: "Books");
