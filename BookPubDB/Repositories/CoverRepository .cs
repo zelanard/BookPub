@@ -3,8 +3,10 @@ using BookPubDB.DTOs;
 using BookPubDB.Model;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Serilog;
 using System.Collections.Generic;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BookPubDB.Repositories
 {
@@ -27,7 +29,7 @@ namespace BookPubDB.Repositories
             await context.Covers.AddAsync(cover);
             int changes = await context.SaveChangesAsync();
 
-            AddArtistsToCover(context, coverDto.Artists);
+            await AddTo(context, data);
 
             return GetSuccessState(cover, changes);
         }
@@ -60,15 +62,16 @@ namespace BookPubDB.Repositories
         {
             Cover? item = await context.Covers
                 .Include(c => c.Artists)
+                .Include(c => c.Book)
                 .FirstOrDefaultAsync(x => x.Id == id);
             return item;
         }
 
-        public async override Task<Cover?> UpdateAsync(PublisherContext context, int id, object itemDto)
+        public async override Task<Cover?> UpdateAsync(PublisherContext context, int id, object data)
         {
             try
             {
-                var dto = JsonConvert.DeserializeObject<CoverDto>(itemDto.ToString());
+                var dto = JsonConvert.DeserializeObject<CoverDto>(data.ToString());
 
                 var itemToUpdate = context.Covers
                     .Include(c => c.Artists)
@@ -77,12 +80,33 @@ namespace BookPubDB.Repositories
                 itemToUpdate.MapDto(dto);
                 int changes = await context.SaveChangesAsync();
 
+                await AddTo(context, data);
+
                 return GetSuccessState(itemToUpdate, changes);
             }
             catch (Exception ex)
             {
                 return null;
             }
+        }
+
+        public async override Task AddTo(PublisherContext context, object cover)
+        {
+            List<int> artistIds = [];
+
+            if (cover is JObject json)
+            {
+                artistIds = json["artistIds"]?.ToObject<List<int>>() ?? [];
+            }
+
+            Cover? coverAdded = context.Covers
+                .Include(c => c.Artists)
+                .FirstOrDefault();
+
+            var foundArtists = context.Artists.Where(x => artistIds.Contains(x.Id));
+            coverAdded?.Artists.Clear();
+            coverAdded?.Artists.AddRange(foundArtists);
+            await context.SaveChangesAsync();
         }
     }
 }

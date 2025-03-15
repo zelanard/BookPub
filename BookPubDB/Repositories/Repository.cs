@@ -1,7 +1,7 @@
 ﻿using BookPubDB.Data;
 using BookPubDB.Model;
 using Microsoft.EntityFrameworkCore;
-using System.Formats.Tar;
+using Newtonsoft.Json.Linq;
 
 namespace BookPubDB.Repositories
 {
@@ -25,16 +25,9 @@ namespace BookPubDB.Repositories
                 return default;
             }
         }
-
-        protected async void AddArtistsToCover(PublisherContext context, List<int> artists)
+        public virtual Task AddTo(PublisherContext context, object item)
         {
-            Cover? coverAdded = context.Covers
-                .Include(c => c.Artists)
-                .FirstOrDefault();
-
-            var foundArtists = context.Artists.Where(x => artists.Contains(x.Id));
-            coverAdded?.Artists.AddRange(foundArtists);
-            await context.SaveChangesAsync();
+            throw new NotImplementedException();
         }
     }
 }
