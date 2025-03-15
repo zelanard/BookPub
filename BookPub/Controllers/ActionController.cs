@@ -31,6 +31,7 @@ namespace BookPub.Controllers
         [HttpPost]
         public virtual IActionResult Create([FromBody] object item)
         {
+            
             TType? result = this.Repository.CreateAsync(this.Context, item).Result;
             return ResponseHandler.Created(result);
         }

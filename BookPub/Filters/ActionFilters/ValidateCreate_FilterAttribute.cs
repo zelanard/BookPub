@@ -11,7 +11,7 @@ namespace BookPub.Filters.ActionFilters
         {
             base.OnActionExecuting(context);
 
-            var item = context.ActionArguments["item"] as IItem;
+            var item = context.ActionArguments["item"];
 
             if (item == null)
             {
@@ -21,15 +21,6 @@ namespace BookPub.Filters.ActionFilters
                     Status = StatusCodes.Status400BadRequest
                 };
                 context.Result = new BadRequestObjectResult(problemDetails);
-            }
-            else if (!Repo[Name].Exists(item.Id).Result)
-            {
-                context.ModelState.AddModelError($"{item.Id}", $"{Name} does not exist");
-                var problemDetails = new ValidationProblemDetails(context.ModelState)
-                {
-                    Status = StatusCodes.Status404NotFound
-                };
-                context.Result = new NotFoundObjectResult(problemDetails);
             }
         }
     }

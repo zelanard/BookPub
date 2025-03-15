@@ -42,6 +42,7 @@ namespace BookPub.Controllers
             return BadRequest(result.Errors);
         }
 
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginUser model, [FromServices] IConfiguration config)
         {
