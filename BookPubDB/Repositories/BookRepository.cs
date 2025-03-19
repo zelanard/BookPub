@@ -7,14 +7,11 @@ using Serilog;
 
 namespace BookPubDB.Repositories
 {
-    /// <summary>
-    /// <c>BookRepository</c> provides book spesific tasks.
-    /// </summary>
-    /// <remarks>
-    /// All methods are documented in <see cref="Repository{T}"/>
-    /// </remarks>
+
+    /// <include file = 'Documentation/Repositories/BookRepository.xml' path='doc/bookrepository/member[@name="T:BookPubDB.Repositories.BookRepository"]' />
     public class BookRepository : Repository<Book>
     {
+        /// <include file = 'Documentation/Repositories/BookRepository.xml' path='doc/bookrepository/member[@name="M:BookPubDB.Repositories.BookRepository.CreateAsync"]' />
         public async override Task<Book?> CreateAsync(PublisherContext context, object data)
         {
             var bookDto = JsonConvert.DeserializeObject<BookDto>(data.ToString());
@@ -28,6 +25,8 @@ namespace BookPubDB.Repositories
 
             return GetSuccessState(book, changes);
         }
+
+        /// <include file = 'Documentation/Repositories/BookRepository.xml' path='doc/bookrepository/member[@name="M:BookPubDB.Repositories.BookRepository.DeleteAsync"]' />
         public async override Task<Book?> DeleteAsync(PublisherContext context, int? id)
         {
             Book? book = context.Books.Find(id);
@@ -40,15 +39,21 @@ namespace BookPubDB.Repositories
 
             return GetSuccessState(book, changes);
         }
+
+        /// <include file = 'Documentation/Repositories/BookRepository.xml' path='doc/bookrepository/member[@name="M:BookPubDB.Repositories.BookRepository.Exists(System.Int32?)"]' />
         public async override Task<bool> Exists(int? id)
         {
             PublisherContext context = new();
             return context.Books.Any(x => x.Id == id);
         }
+
+        /// <include file = 'Documentation/Repositories/BookRepository.xml' path='doc/bookrepository/member[@name="M:BookPubDB.Repositories.BookRepository.GetAllAsync"]' />
         public async override Task<List<Book>> GetAllAsync(PublisherContext context)
         {
             return context.Books.ToList<Book>();
         }
+
+        /// <include file = 'Documentation/Repositories/BookRepository.xml' path='doc/bookrepository/member[@name="M:BookPubDB.Repositories.BookRepository.GetByIdAsync"]' />
         public async override Task<Book?> GetByIdAsync(PublisherContext context, int id)
         {
             Book? book = await context.Books
@@ -59,6 +64,8 @@ namespace BookPubDB.Repositories
 
             return book;
         }
+
+        /// <include file = 'Documentation/Repositories/BookRepository.xml' path='doc/bookrepository/member[@name="M:BookPubDB.Repositories.BookRepository.UpdateAsync"]' />
         public async override Task<Book?> UpdateAsync(PublisherContext context, int id, object itemDto)
         {
             try

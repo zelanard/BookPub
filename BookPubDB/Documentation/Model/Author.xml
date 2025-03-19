@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<author>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Model.Author">
+			<summary>
+				Represents an author who writes books.
+			</summary>
+		</member>
+
+		<!-- Properties -->
+		<member name="P:BookPubDB.Model.Author.Id">
+			<summary>Gets or sets the unique identifier for the author.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Author.FirstName">
+			<summary>Gets or sets the first name of the author.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Author.LastName">
+			<summary>Gets or sets the last name of the author.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Author.Books">
+			<summary>Gets or sets the list of books written by the author.</summary>
+		</member>
+	</author>
+</doc>

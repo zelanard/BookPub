@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<repository>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Repositories.Repository`1">
+			<summary>
+				<c>Repository</c> is an abstract base class that implements <see cref="IRepository{T}"/> and provides a common contract for CRUD operations on entities.
+			</summary>
+			<typeparam name="T">
+				The type of the entity that this repository manages.
+			</typeparam>
+			<remarks>
+				This class provides a default implementation of <see cref="IRepository{T}"/>'s CRUD methods, and subclasses are expected to provide their own implementations of these methods.
+			</remarks>
+		</member>
+
+		<!-- Method Summaries -->
+		<member name="M:BookPubDB.Repositories.Repository`1.CreateAsync(BookPubDB.Data.PublisherContext,System.Object)">
+			<summary>
+				Creates a new entity of type <typeparamref name="T"/> in the data store.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="model">The model containing data to create the entity.</param>
+			<returns>A task representing the asynchronous operation, containing the created entity.</returns>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.Repository`1.DeleteAsync(BookPubDB.Data.PublisherContext,System.Int32?)">
+			<summary>
+				Deletes an entity of type <typeparamref name="T"/> from the data store by its ID.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="id">The ID of the entity to delete.</param>
+			<returns>A task representing the asynchronous operation, containing the deleted entity.</returns>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.Repository`1.Exists(System.Int32?)">
+			<summary>
+				Checks if an entity with the given ID exists in the data store.
+			</summary>
+			<param name="id">The ID of the entity to check for existence.</param>
+			<returns>A task representing the asynchronous operation, containing a boolean indicating whether the entity exists.</returns>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.Repository`1.GetAllAsync(BookPubDB.Data.PublisherContext)">
+			<summary>
+				Gets all entities of type <typeparamref name="T"/> from the data store.
+			</summary>
+			<param name="context">The database context.</param>
+			<returns>A task representing the asynchronous operation, containing a list of all entities.</returns>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.Repository`1.GetByIdAsync(BookPubDB.Data.PublisherContext,System.Int32)">
+			<summary>
+				Gets a specific entity of type <typeparamref name="T"/> by its ID.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="id">The ID of the entity to retrieve.</param>
+			<returns>A task representing the asynchronous operation, containing the entity with the specified ID, or null if not found.</returns>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.Repository`1.UpdateAsync(BookPubDB.Data.PublisherContext,System.Int32,System.Object)">
+			<summary>
+				Updates an existing entity of type <typeparamref name="T"/> in the data store.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="id">The ID of the entity to update.</param>
+			<param name="itemDto">The updated data for the entity.</param>
+			<returns>A task representing the asynchronous operation, containing the updated entity.</returns>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.Repository`1.GetSuccessState``2(BookPubDB.Model.T,System.Int32)">
+			<summary>
+				Returns the entity if the operation was successful (changes were made), otherwise returns the default value for the entity type.
+			</summary>
+			<param name="model">The entity to return if successful.</param>
+			<param name="changes">The number of changes made to the data store.</param>
+			<returns>The entity if successful, otherwise the default value for the entity type.</returns>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.Repository`1.AddTo(BookPubDB.Data.PublisherContext,System.Object)">
+			<summary>
+				This method is a placeholder for adding related data to the entity. It must be implemented in a subclass.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="item">The item to add to the entity.</param>
+			<exception cref="NotImplementedException">Thrown when the method is not implemented by a subclass.</exception>
+		</member>
+	</repository>
+</doc>

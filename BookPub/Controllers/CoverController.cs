@@ -1,4 +1,5 @@
 ﻿using BookPub.Filters.ActionFilters;
+using BookPub.Filters.BaseFilters;
 using BookPub.Filters.ExceptionFilters;
 using BookPubDB.Data;
 using BookPubDB.Model;
@@ -7,36 +8,39 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookPub.Controllers
 {
-    /// <summary>
-    /// <c>CoverController</c> handles <see cref="Cover"/> spesific http requests.
-    /// </summary>
+    /// <include file='Documentation/Controllers/CoverController.xml' path='doc/covers/member[@name="T:BookPub.Controllers.CoverController"]' />
     [Route("api/[controller]")]
     [ApiController]
     public class CoverController : ActionController<Cover>
     {
+        /// <include file='Documentation/Controllers/CoverController.xml' path='doc/covers/member[@name="C:BookPub.Controllers.CoverController"]/summary' />
         public CoverController(PublisherContext context, IRepository<Cover> repo) : base(context, repo) { }
 
-        [ValidateCreate_Filter("Cover")]
+        /// <include file='Documentation/Controllers/CoverController.xml' path='doc/covers/methods/member[@name="M:BookPub.Controllers.CoverController.Create"]' />
+        [ValidateCreate_Filter(RepoKey.Cover)]
         public override IActionResult Create([FromBody] object item)
         {
             return base.Create(item);
         }
 
-        [ValidateId_Filter("Cover")]
+        /// <include file='Documentation/Controllers/CoverController.xml' path='doc/covers/methods/member[@name="M:BookPub.Controllers.CoverController.Delete"]' />
+        [ValidateId_Filter(RepoKey.Cover)]
         public override IActionResult Delete(int id)
         {
             return base.Delete(id);
         }
 
-        [ValidateId_Filter("Cover")]
-        public override Task<IActionResult> Get(int id)
+        /// <include file='Documentation/Controllers/CoverController.xml' path='doc/covers/methods/member[@name="M:BookPub.Controllers.CoverController.Get"]' />
+        [ValidateId_Filter(RepoKey.Cover)]
+        public override IActionResult Get(int id)
         {
             return base.Get(id);
         }
 
-        [ValidateId_Filter("Cover")]
-        [ValidateUpdate_Filter("Cover")]
-        [Update_ExceptionFilter("Cover")]
+        /// <include file='Documentation/Controllers/CoverController.xml' path='doc/covers/methods/member[@name="M:BookPub.Controllers.CoverController.Update"]' />
+        [ValidateId_Filter(RepoKey.Cover)]
+        [ValidateUpdate_Filter(RepoKey.Cover)]
+        [Update_ExceptionFilter(RepoKey.Cover)]
         public override IActionResult Update(int id, [FromBody] object item)
         {
             return base.Update(id, item);

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<basefiltereattribute>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Filters.BaseFilters.BaseFilterAttribute">
+			<summary>
+				<c>BaseFilterAttribute</c> Provides a <see cref="FilterRepositoryHandler"/> to ActionFilters.
+			</summary>
+		</member>
+
+		<!-- Field Summary -->
+		<member name="F:BookPub.Filters.BaseFilters.BaseFilterAttribute.RepositoryHandler">
+			<summary>
+				The <see cref="FilterRepositoryHandler"/> instance used to manage repository access.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPub.Filters.BaseFilters.BaseFilterAttribute">
+			<summary>
+				Initializes a new instance of the <see cref="BaseFilterAttribute"/> class.
+			</summary>
+			<param name="repoKey">
+				The repository key used to initialize the FilterRepositoryHandler.
+			</param>
+		</member>
+	</basefiltereattribute>
+</doc>

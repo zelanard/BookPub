@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<authcontroller>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Controllers.AuthController">
+			<summary>
+				Represents an authentication controller that handles user authentication and registration.
+				Provides API endpoints for registering new users and logging in to retrieve JWT tokens.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPub.Controllers.AuthController">
+			<summary>
+				Initializes a new instance of the <c>AuthController</c> class.
+			</summary>
+			<param name="userManager">The user manager service for handling user-related operations.</param>
+			<param name="signInManager">The sign-in manager service for handling authentication.</param>
+		</member>
+
+		<!-- Property Summaries -->
+		<member name="F:BookPub.Controllers.AuthController.UserManager">
+			<summary>
+				Manages user-related operations such as creation, deletion, and lookup.
+			</summary>
+		</member>
+
+		<member name="F:BookPub.Controllers.AuthController.SignInManager">
+			<summary>
+				Handles user authentication, including password sign-in functionality.
+			</summary>
+		</member>
+
+		<member name="F:BookPub.Controllers.AuthController.Repository">
+			<summary>
+				Provides database operations for authentication and user retrieval.
+			</summary>
+		</member>
+
+		<!-- Method Summaries -->
+		<methods>
+			<!-- Register -->
+			<member name="M:BookPub.Controllers.AuthController.Register">
+				<summary>
+					Registers a new user in the database.
+				</summary>
+				<param name="model">A JSON object containing the user's registration details.</param>
+				<returns>
+					An <see cref="IActionResult"/> indicating whether the registration was successful or failed.
+				</returns>
+			</member>
+
+			<!-- Login -->
+			<member name="M:BookPub.Controllers.AuthController.Login">
+				<summary>
+					Handles a user login request and returns a JWT token if authentication is successful.
+				</summary>
+				<param name="model">A JSON object containing the user's login credentials.</param>
+				<param name="config">The application configuration service for accessing security settings.</param>
+				<returns>
+					An <see cref="IActionResult"/> containing the authentication result and a JWT token upon success.
+				</returns>
+			</member>
+		</methods>
+	</authcontroller>
+</doc>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<updateexception>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Filters.ExceptionFilters.Update_ExceptionFilterAttribute">
+			<summary>
+				<c>Update_ExceptionFilterAttribute</c> Provides filters for update request exceptions.
+			</summary>
+		</member>
+
+		<member name="C:BookPub.Filters.ExceptionFilters.Update_ExceptionFilterAttribute">
+			<summary>
+				Initializes a new instance of the <see cref="Update_ExceptionFilterAttribute"/> class.
+			</summary>
+			<param name="rkey">
+				rkey is a <see cref="RepoKey"/> corresponding to the Reposity's Type parameter.
+			</param>
+		</member>
+
+		<member name="M:BookPub.Filters.ExceptionFilters.Update_ExceptionFilterAttribute.OnException">
+			<summary>
+				If the id does not exist, add a 404 Not Found error code.
+			</summary>
+			<param name="context">
+				The <see cref="ExceptionContext"/> for exception filters.
+			</param>
+		</member>
+
+	</updateexception>
+</doc>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<coverrepository>
+		<!-- Class-level documentation for CoverRepository -->
+		<member name="T:BookPubDB.Repositories.CoverRepository">
+			<summary>
+				<c>CoverRepository</c> provides cover-specific tasks for handling covers in the BookPubDB context.
+			</summary>
+			<remarks>
+				This repository includes CRUD operations such as Create, Delete, Get, Update, and additional logic for handling cover details and artist assignments.
+			</remarks>
+		</member>
+
+		<!-- Method Summaries -->
+		<member name="M:BookPubDB.Repositories.CoverRepository.CreateAsync">
+			<summary>
+				Creates a new <see cref="Cover"/> based on the provided data.
+			</summary>
+			<param name="context">
+				The <see cref="PublisherContext"/> to interact with the database.
+			</param>
+			<param name="data">
+				The data used to create the cover, typically in the form of a <see cref="CoverDto"/>.
+			</param>
+			<returns>
+				A task that represents the asynchronous operation, containing the created <see cref="Cover"/>.
+			</returns>
+			<exception cref="JsonException">Thrown when the data cannot be deserialized correctly.</exception>
+			<remarks>
+				The method deserializes the provided data, creates a new <see cref="Cover"/>, and adds it to the context. It then saves changes and calls the <see cref="AddTo"/> method to handle artist assignments.
+			</remarks>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.CoverRepository.DeleteAsync">
+			<summary>
+				Deletes the cover with the specified <paramref name="id"/>.
+			</summary>
+			<param name="context">
+				The <see cref="PublisherContext"/> to interact with the database.
+			</param>
+			<param name="id">The ID of the cover to delete.</param>
+			<returns>
+				A task that represents the asynchronous operation, containing the deleted <see cref="Cover"/> or null if not found.
+			</returns>
+			<exception cref="ArgumentNullException">
+				Thrown if the cover cannot be found by the provided <paramref name="id"/>.
+			</exception>
+			<remarks>
+				If the cover exists, it is removed from the context and changes are saved. If not found, the method returns null.
+			</remarks>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.CoverRepository.Exists">
+			<summary>
+				Checks whether a cover with the specified <paramref name="id"/> exists in the database.
+			</summary>
+			<param name="id">The ID of the cover to check.</param>
+			<returns>A task that represents the asynchronous operation, returning a boolean indicating if the cover exists.</returns>
+			<remarks>
+				This method performs a simple lookup in the database to check for the existence of the cover.
+			</remarks>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.CoverRepository.GetAllAsync">
+			<summary>
+				Retrieves all covers from the database.
+			</summary>
+			<param name="context">
+				The <see cref="PublisherContext"/> to interact with the database.
+			</param>
+			<returns>
+				A task that represents the asynchronous operation, containing a list of <see cref="Cover"/> objects.
+			</returns>
+			<remarks>
+				The method retrieves all covers stored in the context and returns them as a list.
+			</remarks>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.CoverRepository.GetByIdAsync">
+			<summary>
+				Retrieves the cover with the specified <paramref name="id"/>.
+			</summary>
+			<param name="context">
+				The <see cref="PublisherContext"/> to interact with the database.
+			</param>
+			<param name="id">The ID of the cover to retrieve.</param>
+			<returns>
+				A task that represents the asynchronous operation, containing the <see cref="Cover"/> with the specified ID, or null if not found.
+			</returns>
+			<remarks>
+				This method fetches the cover from the database, including related entities like artists and the associated book.
+			</remarks>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.CoverRepository.UpdateAsync">
+			<summary>
+				Updates the cover with the specified <paramref name="id"/> based on the provided data.
+			</summary>
+			<param name="context">
+				The <see cref="PublisherContext"/> to interact with the database.
+			</param>
+			<param name="id">The ID of the cover to update.</param>
+			<param name="data">
+				The new data to update the cover with, typically in the form of a <see cref="CoverDto"/>.
+			</param>
+			<returns>
+				A task that represents the asynchronous operation, containing the updated <see cref="Cover"/>.
+			</returns>
+			<exception cref="JsonException">Thrown when the data cannot be deserialized correctly.</exception>
+			<remarks>
+				The method deserializes the data, updates the existing cover entity, saves changes, and updates the related artist assignments.
+			</remarks>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.CoverRepository.AddTo">
+			<summary>
+				Assigns artists to the cover based on the provided data.
+			</summary>
+			<param name="context">
+				The <see cref="PublisherContext"/> to interact with the database.
+			</param>
+			<param name="cover">The cover object containing artist IDs to be assigned.</param>
+			<returns>A task representing the asynchronous operation.</returns>
+			<remarks>
+				The method parses the artist IDs from the provided data and updates the cover's artist collection.
+			</remarks>
+		</member>
+	</coverrepository>
+</doc>

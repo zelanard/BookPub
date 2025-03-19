@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<books>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Controllers.BookController">
+			<summary>
+				Handles API operations for managing <see cref="Book"/>s.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPub.Controllers.BookController">
+			<summary>
+				Initializes a new instance of the <see cref="BookController"/> class.
+			</summary>
+			<param name="context">The database context for <see cref="Book"/> operations.</param>
+			<param name="bookRepo">The repository handling <see cref="Book"/> data.</param>
+		</member>
+
+		<!--Method Summaries-->
+		<methods>
+			<!--Create-->
+			<member name="M:BookPub.Controllers.BookController.Create">
+				<summary>
+					Create <see cref="Book"/> in database.
+				</summary>
+				<param name="item">A json object with <see cref="Book"/> data.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+
+			<!--Delete-->
+			<member name="M:BookPub.Controllers.BookController.Delete">
+				<summary>
+					Delete <see cref="Book"/> from database.
+				</summary>
+				<param name="id">The id of the <see cref="Book"/> to be deleted.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+
+			<!--Get-->
+			<member name="M:BookPub.Controllers.BookController.Get">
+				<summary>
+					Get single <see cref="Book"/> from database.
+				</summary>
+				<param name="id">The id of the item to get.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.<br/>
+				On a success the IActionResult also contains the retrived <see cref="Book"/>.
+			</returns>
+			</member>
+
+			<!--Update-->
+			<member name="M:BookPub.Controllers.BookController.Update">
+				<summary>
+					Update a <see cref="Book"/> in the database.
+				</summary>
+				<param name="id">the id of the <see cref="Book"/> to update.</param>
+				<param name="item">A json object with updated <see cref="Book"/> data.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+		</methods>
+	</books>
+</doc>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<authordto>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.DTOs.AuthorDto">
+			<summary>
+				Represents a data transfer object (DTO) for an author. This DTO is used to transfer author-related
+				data between different layers of the application while maintaining encapsulation and separation
+				of concerns.
+			</summary>
+		</member>
+
+		<!-- FirstName Property Summary -->
+		<member name="P:BookPubDB.DTOs.AuthorDto.FirstName">
+			<summary>
+				Gets or sets the first name of the author.
+			</summary>
+		</member>
+
+		<!-- LastName Property Summary -->
+		<member name="P:BookPubDB.DTOs.AuthorDto.LastName">
+			<summary>
+				Gets or sets the last name of the author.
+			</summary>
+		</member>
+	</authordto>
+</doc>

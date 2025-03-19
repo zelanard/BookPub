@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<book>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Model.Book">
+			<summary>
+				Represents a book that has a title, publish date, base price, and an associated author and cover.
+			</summary>
+		</member>
+
+		<!-- Properties -->
+		<member name="P:BookPubDB.Model.Book.Id">
+			<summary>Gets or sets the unique identifier for the book.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Book.Title">
+			<summary>Gets or sets the title of the book.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Book.PublishDate">
+			<summary>Gets or sets the publish date of the book.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Book.BasePrice">
+			<summary>Gets or sets the base price of the book.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Book.Author">
+			<summary>Gets or sets the author of the book.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Book.AuthorId">
+			<summary>Gets or sets the ID of the author of the book.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Book.Cover">
+			<summary>Gets or sets the cover of the book.</summary>
+		</member>
+	</book>
+</doc>

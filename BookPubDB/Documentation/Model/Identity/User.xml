@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<user>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Model.Identity.User">
+			<summary>
+				Represents a user entity with authentication and identity details.
+			</summary>
+		</member>
+
+		<!-- Properties -->
+		<member name="P:BookPubDB.Model.Identity.User.Id">
+			<summary>Gets or sets the unique identifier for the user.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Identity.User.Email">
+			<summary>Gets or sets the email address of the user. This is a required field.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Identity.User.Password">
+			<summary>Gets or sets the user's password. This property is masked for security.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Identity.User.Username">
+			<summary>Gets or sets the username. The length must be between 3 and 50 characters.</summary>
+		</member>
+	</user>
+</doc>

@@ -10,14 +10,10 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace BookPubDB.Repositories
 {
-    /// <summary>
-    /// <c>CoverRepository</c> provides cover spesific tasks.
-    /// </summary>
-    /// <remarks>
-    /// All methods are documented in the <see cref="Repository{T}"/>
-    /// </remarks>
+    /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="T:BookPubDB.Repositories.CoverRepository"]' />
     public class CoverRepository : Repository<Cover>
     {
+        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.CreateAsync"]' />
         public async override Task<Cover?> CreateAsync(PublisherContext context, object data)
         {
             CoverDto? coverDto = JsonConvert.DeserializeObject<CoverDto>(data.ToString());
@@ -34,6 +30,7 @@ namespace BookPubDB.Repositories
             return GetSuccessState(cover, changes);
         }
 
+        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.DeleteAsync"]' />
         public async override Task<Cover?> DeleteAsync(PublisherContext context, int? id)
         {
             Cover? cover = context.Covers.Find(id);
@@ -47,17 +44,20 @@ namespace BookPubDB.Repositories
             return GetSuccessState(cover, changes);
         }
 
+        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.Exists"]' />
         public async override Task<bool> Exists(int? id)
         {
             PublisherContext context = new();
             return context.Covers.Any(x => x.Id == id);
         }
 
+        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.GetAllAsync"]' />
         public async override Task<List<Cover>> GetAllAsync(PublisherContext context)
         {
             return context.Covers.ToList<Cover>(); //returns the list of Covers
         }
 
+        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.GetByIdAsync"]' />
         public async override Task<Cover?> GetByIdAsync(PublisherContext context, int id)
         {
             Cover? item = await context.Covers
@@ -67,6 +67,7 @@ namespace BookPubDB.Repositories
             return item;
         }
 
+        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.UpdateAsync"]' />
         public async override Task<Cover?> UpdateAsync(PublisherContext context, int id, object data)
         {
             try
@@ -90,6 +91,7 @@ namespace BookPubDB.Repositories
             }
         }
 
+        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.AddTo"]' />
         public async override Task AddTo(PublisherContext context, object cover)
         {
             List<int> artistIds = [];

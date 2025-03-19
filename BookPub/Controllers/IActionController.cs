@@ -1,17 +1,23 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WebAPIDemo.Controllers
+namespace BookPub.Controllers
 {
-    /// <summary>
-    /// <c>IActionController</c> provides access to the general http requests for dependency injection purposes.
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
+    /// <include file='Documentation/Controllers/IActionController.xml' path='doc/iactioncontroller/member[@name="T:BookPub.Controllers.IActionController`1"]' />
     public interface IActionController<T>
     {
+        /// <include file='Documentation/Controllers/IActionController.xml' path='doc/iactioncontroller/methods/member[@name="M:BookPub.Controllers.IActionController`1.GetAll"]' />
         public IActionResult GetAll();
-        public Task<IActionResult> Get(int id);
+
+        /// <include file='Documentation/Controllers/IActionController.xml' path='doc/iactioncontroller/methods/member[@name="M:BookPub.Controllers.IActionController`1.Get(System.Int32)"]' />
+        public IActionResult Get(int id);
+
+        /// <include file='Documentation/Controllers/IActionController.xml' path='doc/iactioncontroller/methods/member[@name="M:BookPub.Controllers.IActionController`1.Create(System.Object)"]' />
         public IActionResult Create(object item);
+
+        /// <include file='Documentation/Controllers/IActionController.xml' path='doc/iactioncontroller/methods/member[@name="M:BookPub.Controllers.IActionController`1.Update(System.Int32,System.Object)"]' />
         public IActionResult Update(int id, object item);
+
+        /// <include file='Documentation/Controllers/IActionController.xml' path='doc/iactioncontroller/methods/member[@name="M:BookPub.Controllers.IActionController`1.Delete(System.Int32)"]' />
         public IActionResult Delete(int id);
     }
 }

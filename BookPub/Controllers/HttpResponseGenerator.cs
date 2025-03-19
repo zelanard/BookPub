@@ -4,18 +4,14 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookPub.Controllers
 {
-    /// <summary>
-    /// <c>HttpResponseGenerator</c> Provides methods which generate <see cref="IActionResult"/>s
-    /// </summary>
-    /// <typeparam name="TType"></typeparam>
+    /// <include file='Documentation/Controllers/HttpResponseGenerator.xml' path='doc/httpresponsegenerator/member[@name="T:BookPub.Controllers.HttpResponseGenerator`1"]' />
     public class HttpResponseGenerator<TType> : ControllerBase where TType : class
     {
-        /// <summary>
-        /// Handles Created <see cref="IActionResult"/>s
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns>Created if result is not empty else BadRequest</returns>
-        public IActionResult Created(TType? result) 
+        /// <include file='Documentation/Controllers/HttpResponseGenerator.xml' path='doc/httpresponsegenerator/member[@name="C:BookPub.Controllers.HttpResponseGenerator`1"]/summary' />
+        public HttpResponseGenerator() { }
+
+        /// <include file='Documentation/Controllers/HttpResponseGenerator.xml' path='doc/httpresponsegenerator/methods/member[@name="M:BookPub.Controllers.HttpResponseGenerator`1.Created"]' />
+        public IActionResult Created(TType? result)
         {
             if (result != null)
             {
@@ -27,11 +23,7 @@ namespace BookPub.Controllers
             }
         }
 
-        /// <summary>
-        /// Handles Deleted <see cref="IActionResult"/>s
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns>Deleted if result is not empty else BadRequest</returns>
+        /// <include file='Documentation/Controllers/HttpResponseGenerator.xml' path='doc/httpresponsegenerator/methods/member[@name="M:BookPub.Controllers.HttpResponseGenerator`1.Deleted"]' />
         public IActionResult Deleted(TType? result)
         {
             if (result != null)
@@ -44,11 +36,7 @@ namespace BookPub.Controllers
             }
         }
 
-        /// <summary>
-        /// Handles Ok <see cref="IActionResult"/>s with a single <see cref="TType"/>
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns>Ok if result is not empty else NotFound</returns>
+        /// <include file='Documentation/Controllers/HttpResponseGenerator.xml' path='doc/httpresponsegenerator/methods/member[@name="M:BookPub.Controllers.HttpResponseGenerator`1.Ok(System.Collections.Generic.List{TType})"]' />
         public IActionResult Ok(TType? result)
         {
             if (result != null)
@@ -61,11 +49,7 @@ namespace BookPub.Controllers
             }
         }
 
-        /// <summary>
-        /// Handles Ok <see cref="IActionResult"/>s with a List of <see cref="TType"/>
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns>Created if result is not empty else NotFound</returns>
+        /// <include file='Documentation/Controllers/HttpResponseGenerator.xml' path='doc/httpresponsegenerator/methods/member[@name="M:BookPub.Controllers.HttpResponseGenerator`1.Ok(TType)"]' />
         public IActionResult Ok(List<TType> result)
         {
             if (result != null && result.Count > 0)
@@ -78,11 +62,7 @@ namespace BookPub.Controllers
             }
         }
 
-        /// <summary>
-        /// Handles Updated <see cref="IActionResult"/>s
-        /// </summary>
-        /// <param name="result"></param>
-        /// <returns>Updated if result is not empty else BadRequest</returns>
+        /// <include file='Documentation/Controllers/HttpResponseGenerator.xml' path='doc/httpresponsegenerator/methods/member[@name="M:BookPub.Controllers.HttpResponseGenerator`1.Update"]' />
         public IActionResult Update(TType? result)
         {
             if (result != null)
@@ -95,12 +75,7 @@ namespace BookPub.Controllers
             }
         }
 
-        /// <summary>
-        /// Generates an appropriate <see cref="IActionResult"/> based on the incomming ActionResultStatus
-        /// </summary>
-        /// <param name="type"></param>
-        /// <param name="ars"></param>
-        /// <returns>An IActionResult</returns>
+        /// <include file='Documentation/Controllers/HttpResponseGenerator.xml' path='doc/httpresponsegenerator/methods/member[@name="M:BookPub.Controllers.HttpResponseGenerator`1.GetIActionResult"]' />
         private IActionResult GetIActionResult(object? type, ActionResultStatus ars)
         {
             switch (ars)

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<repokey>
+		<!-- Enum Summary -->
+		<member name="E:BookPub.Filters.ActionFilters.BaseFilters.RepoKey">
+			<summary>
+				An enum containing keys for the various repositories used in the derived filters.
+			</summary>
+		</member>
+		<member name="P:BookPub.Filters.ActionFilters.BaseFilters.RepoKey.Artist">
+			<summary>
+				The key for the <see cref="ArtistRepository"/>.
+			</summary>
+		</member>
+		<member name="P:BookPub.Filters.ActionFilters.BaseFilters.RepoKey.Author">
+			<summary>
+				The key for the <see cref="AuthorRepository"/>.
+			</summary>
+		</member>
+		<member name="P:BookPub.Filters.ActionFilters.BaseFilters.RepoKey.Book">
+			<summary>
+				The key for the <see cref="BookRepository"/>.
+			</summary>
+		</member>
+		<member name="P:BookPub.Filters.ActionFilters.BaseFilters.RepoKey.Cover">
+			<summary>
+				The key for the <see cref="CoverRepository"/>.
+			</summary>
+		</member>
+	</repokey>
+</doc>

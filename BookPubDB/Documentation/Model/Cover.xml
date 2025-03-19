@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<cover>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Model.Cover">
+			<summary>
+				Represents the cover of a book, including its design ideas, associated artists, and whether it's digital-only.
+			</summary>
+		</member>
+
+		<!-- Properties -->
+		<member name="P:BookPubDB.Model.Cover.Id">
+			<summary>Gets or sets the unique identifier for the cover.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Cover.DesignIdeas">
+			<summary>Gets or sets the design ideas for the cover.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Cover.DigitalOnly">
+			<summary>Gets or sets whether the cover is digital-only.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Cover.Artists">
+			<summary>Gets or sets the list of artists associated with the cover.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Cover.Book">
+			<summary>Gets or sets the book that the cover is associated with.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Cover.BookId">
+			<summary>Gets or sets the ID of the book associated with the cover.</summary>
+		</member>
+	</cover>
+</doc>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<iactioncontroller>
+		<!-- Interface Summary -->
+		<member name="T:BookPub.Controllers.IActionController`1">
+			<summary>
+				Provides access to general HTTP request methods for dependency injection purposes.
+			</summary>
+			<typeparam name="T">The type of object that the controller manages.</typeparam>
+		</member>
+
+		<!-- Method Summaries -->
+		<methods>
+			<!-- GetAll -->
+			<member name="M:BookPub.Controllers.IActionController`1.GetAll">
+				<summary>
+					Retrieves all available objects of type <typeparamref name="T"/>.
+				</summary>
+				<returns>
+					An <see cref="IActionResult"/> containing a list of all objects.
+				</returns>
+			</member>
+
+			<!-- Get -->
+			<member name="M:BookPub.Controllers.IActionController`1.Get(System.Int32)">
+				<summary>
+					Retrieves a specific object by its ID.
+				</summary>
+				<param name="id">The unique identifier of the object.</param>
+				<returns>
+					An <see cref="IActionResult"/> containing the requested object, or NotFound if not found.
+				</returns>
+			</member>
+
+			<!-- Create -->
+			<member name="M:BookPub.Controllers.IActionController`1.Create(System.Object)">
+				<summary>
+					Creates a new object.
+				</summary>
+				<param name="item">The object to be created.</param>
+				<returns>
+					An <see cref="IActionResult"/> indicating success or failure.
+				</returns>
+			</member>
+
+			<!-- Update -->
+			<member name="M:BookPub.Controllers.IActionController`1.Update(System.Int32,System.Object)">
+				<summary>
+					Updates an existing object.
+				</summary>
+				<param name="id">The unique identifier of the object to be updated.</param>
+				<param name="item">The updated object data.</param>
+				<returns>
+					An <see cref="IActionResult"/> indicating success or failure.
+				</returns>
+			</member>
+
+			<!-- Delete -->
+			<member name="M:BookPub.Controllers.IActionController`1.Delete(System.Int32)">
+				<summary>
+					Deletes an object by its ID.
+				</summary>
+				<param name="id">The unique identifier of the object to be deleted.</param>
+				<returns>
+					An <see cref="IActionResult"/> indicating success or failure.
+				</returns>
+			</member>
+		</methods>
+	</iactioncontroller>
+</doc>

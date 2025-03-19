@@ -7,14 +7,10 @@ using Serilog;
 
 namespace BookPubDB.Repositories
 {
-    /// <summary>
-    /// <c>ArtistRepository</c> provides artist spesific tasks.
-    /// </summary>
-    /// <remarks>
-    /// All methods are documented in <see cref="Repository{T}"/>
-    /// </remarks>
+    /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="T:BookPubDB.Repositories.ArtistRepository"]' />
     public class ArtistRepository : Repository<Artist>
     {
+        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.CreateAsync"]' />
         public async override Task<Artist?> CreateAsync(PublisherContext context, object data)
         {
             var artistDto = JsonConvert.DeserializeObject<ArtistDto>(data.ToString());
@@ -28,6 +24,8 @@ namespace BookPubDB.Repositories
 
             return GetSuccessState(artist, changes);
         }
+
+        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.DeleteAsync"]' />
         public async override Task<Artist?> DeleteAsync(PublisherContext context, int? id)
         {
             Artist? artist = context.Artists.Find(id);
@@ -40,15 +38,21 @@ namespace BookPubDB.Repositories
 
             return GetSuccessState(artist, changes);
         }
+
+        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.Exists"]' />
         public async override Task<bool> Exists(int? id)
         {
             PublisherContext context = new();
             return context.Artists.Any(x => x.Id == id);
         }
+
+        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.GetAllAsync"]' />
         public async override Task<List<Artist>> GetAllAsync(PublisherContext context)
         {
             return context.Artists.ToList<Artist>();
         }
+
+        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.GetByIdAsync"]' />
         public async override Task<Artist?> GetByIdAsync(PublisherContext context, int id)
         {
             Artist? artist = await context.Artists
@@ -57,6 +61,8 @@ namespace BookPubDB.Repositories
 
             return artist;
         }
+
+        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.UpdateAsync"]' />
         public async override Task<Artist?> UpdateAsync(PublisherContext context, int id, object itemDto)
         {
             try

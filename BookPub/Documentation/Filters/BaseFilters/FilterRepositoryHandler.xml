@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<filterrepositoryhandler>
+
+		<!-- Class Summary -->
+		<member name="T:BookPub.Filters.BaseFilters.FilterRepositoryHandler">
+			<summary>
+				<c>FilterRepositoryHandler</c> Provides filter repository methods, which mimics a generic class by making all
+				Reposities avaiable to all inherited types, then accessing them through the <see cref="RKey"/> Property.
+			</summary>
+			<remarks>
+				Attributes in C# cannot be generic because their types must be fully defined at compile-time,
+				whereas generic types allow for type parameters that are specified later.
+				This was discovered during project development through testing and research.
+			</remarks>
+		</member>
+
+		<!-- Field Summary -->
+		<member name="F:BookPub.Filters.BaseFilters.FilterRepositoryHandler.Repo">
+			<summary>
+				A dictionary mapping Keys to their respective repository implementations.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPub.Filters.BaseFilters.FilterRepositoryHandler">
+			<summary>
+				Initializes a new instance of the <see cref="BaseFilterAttribute"/>.
+			</summary>
+			<param name="repoKey">
+				Sets the key associated with the filters Repository.
+			</param>
+		</member>
+
+		<!-- Property Summary -->
+		<member name="P:BookPub.Filters.BaseFilters.FilterRepositoryHandler.RKey">
+			<summary>
+				Gets the key associated with this filters Repository.
+			</summary>
+		</member>
+
+		<!-- Methoid Summary -->
+		<methods>
+			<member name="M:BookPub.Filters.BaseFilters.FilterRepositoryHandler.Repository">
+				<summary>
+					Get the repository relevant for the RKey.
+				</summary>
+			</member>
+		</methods>
+
+	</filterrepositoryhandler>
+</doc>

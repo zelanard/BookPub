@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<artistdto>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.DTOs.ArtistDto">
+			<summary>
+				Represents a data transfer object (DTO) for an artist. This DTO is used to transfer artist-related
+				data between different layers of the application while ensuring encapsulation and separation
+				of concerns.
+			</summary>
+		</member>
+
+		<!-- Property Summaries -->
+		<member name="P:BookPubDB.DTOs.ArtistDto.FirstName">
+			<summary>
+				Gets or sets the first name of the artist.
+			</summary>
+		</member>
+
+		<member name="P:BookPubDB.DTOs.ArtistDto.LastName">
+			<summary>
+				Gets or sets the last name of the artist.
+			</summary>
+		</member>
+	</artistdto>
+</doc>

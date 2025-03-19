@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<actionresultstatus>
+		<!-- Enum Summary -->
+		<member name="E:BookPubDB.Model.Enums.ActionResultStatus">
+			<summary>
+				Represents standardized HTTP-like status codes used for API action results.
+			</summary>
+		</member>
+
+		<!-- Enum Fields -->
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.Ok">
+			<summary>Indicates that the request was successful. (200)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.Created">
+			<summary>Indicates that a new resource was successfully created. (201)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.Accepted">
+			<summary>Indicates that the request has been accepted for processing, but the processing has not yet been completed. (202)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.NoContent">
+			<summary>Indicates that the request was successful but there is no content to return. (204)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.Deleted">
+			<summary>Indicates that the resource was successfully deleted. (231 - Custom Code)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.Updated">
+			<summary>Indicates that the resource was successfully updated. (232 - Custom Code)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.BadRequest">
+			<summary>Indicates that the request was malformed or invalid. (400)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.Unauthorized">
+			<summary>Indicates that authentication is required or has failed. (401)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.Forbidden">
+			<summary>Indicates that the request is valid, but the server is refusing action. (403)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.NotFound">
+			<summary>Indicates that the requested resource was not found. (404)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.Conflict">
+			<summary>Indicates that the request could not be completed due to a conflict with the current state of the resource. (409)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.UnprocessableEntity">
+			<summary>Indicates that the server understands the content type but cannot process the request due to semantic errors. (422)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.InternalServerError">
+			<summary>Indicates that an internal server error occurred. (500)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.NotImplemented">
+			<summary>Indicates that the server does not support the functionality required to fulfill the request. (501)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.BadGateway">
+			<summary>Indicates that the server received an invalid response from an upstream server. (502)</summary>
+		</member>
+
+		<member name="F:BookPubDB.Model.Enums.ActionResultStatus.ServiceUnavailable">
+			<summary>Indicates that the server is currently unavailable due to overload or maintenance. (503)</summary>
+		</member>
+	</actionresultstatus>
+</doc>

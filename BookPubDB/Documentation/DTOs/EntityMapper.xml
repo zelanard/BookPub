@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<entitymapper>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.DTOs.EntityMapper">
+			<summary>
+				Provides an extension method for mapping properties from a DTO (Data Transfer Object)
+				to an entity object. This utility class helps synchronize data between different layers
+				of the application.
+			</summary>
+		</member>
+
+		<!-- MapDto Method Summary -->
+		<member name="M:BookPubDB.DTOs.EntityMapper.MapDto">
+			<summary>
+				Maps properties from a DTO to an entity of the same property names and types.
+			</summary>
+			<typeparam name="TDto">The DTO type containing the source properties.</typeparam>
+			<typeparam name="TEntity">The entity type that will receive the mapped values.</typeparam>
+			<param name="entity">The entity to which properties will be mapped.</param>
+			<param name="dto">The DTO containing the property values.</param>
+			<exception cref="System.ArgumentNullException">
+				Thrown when either the DTO or the entity is null.
+			</exception>
+		</member>
+	</entitymapper>
+</doc>

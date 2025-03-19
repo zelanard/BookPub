@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<coverdto>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.DTOs.CoverDto">
+			<summary>
+				Represents a data transfer object (DTO) for a book cover. This DTO is used to transfer
+				cover-related data between different layers of the application while maintaining encapsulation
+				and separation of concerns.
+			</summary>
+		</member>
+
+		<!-- DesignIdeas Property Summary -->
+		<member name="P:BookPubDB.DTOs.CoverDto.DesignIdeas">
+			<summary>
+				Gets or sets the design ideas for the book cover.
+			</summary>
+		</member>
+
+		<!-- DigitalOnly Property Summary -->
+		<member name="P:BookPubDB.DTOs.CoverDto.DigitalOnly">
+			<summary>
+				Gets or sets a value indicating whether the cover is only available in digital format.
+			</summary>
+		</member>
+
+		<!-- Artists Property Summary -->
+		<member name="P:BookPubDB.DTOs.CoverDto.Artists">
+			<summary>
+				Gets or sets the list of artist IDs associated with the book cover.
+			</summary>
+		</member>
+
+		<!-- BookId Property Summary -->
+		<member name="P:BookPubDB.DTOs.CoverDto.BookId">
+			<summary>
+				Gets or sets the unique identifier of the book associated with the cover.
+			</summary>
+		</member>
+	</coverdto>
+</doc>

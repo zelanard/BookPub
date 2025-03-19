@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<baseexceptionfiltereattribute>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Filters.BaseFilters.BaseExceptionFilterAttribute">
+			<summary>
+				<c>BaseExceptionFilterAttribute</c> Provides a <see cref="FilterRepositoryHandler"/> to ExceptionFilters.
+			</summary>
+		</member>
+
+		<!-- Field Summary -->
+		<member name="F:BookPub.Filters.BaseFilters.BaseExceptionFilterAttribute.RepositoryHandler">
+			<summary>
+				The <see cref="FilterRepositoryHandler"/> instance used to manage repository access.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPub.Filters.BaseFilters.BaseExceptionFilterAttribute">
+			<summary>
+				Initializes a new instance of the <see cref="BaseExceptionFilterAttribute"/> class.
+			</summary>
+			<param name="repoKey">
+				The repository key used to initialize the FilterRepositoryHandler.
+			</param>
+		</member>
+	</baseexceptionfiltereattribute>
+</doc>

@@ -1,7 +1,9 @@
 ﻿namespace BookPubDB.DTOs
 {
+    /// <include file='Documentation/DTOs/EntityMapper.xml' path='doc/entitymapper/member[@name="T:BookPubDB.DTOs.EntityMapper"]' />
     public static class EntityMapper
     {
+        /// <include file='Documentation/DTOs/EntityMapper.xml' path='doc/entitymapper/member[@name="M:BookPubDB.DTOs.EntityMapper.MapDto"]' />
         public static void MapDto<TDto, TEntity>(this TEntity entity, TDto dto)
         {
             if(dto == null || entity == null)

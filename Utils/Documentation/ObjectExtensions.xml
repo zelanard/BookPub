@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<objectextensions>
+		<!-- Class Summaries -->
+		<member name="T:Utils.ObjectExtensions">
+			<summary>
+				The <c>ObjectExtensions</c> class provides extension methods for working with objects, including serialization and property checks.
+			</summary>
+			<remarks>
+				This class includes methods like <c>ToJson</c> for serializing objects to JSON and <c>HasProperties</c> to check if an object has any properties or data.
+			</remarks>
+		</member>
+
+		<!-- Method Summaries -->
+		<member name="M:Utils.ObjectExtensions.ToJson">
+			<summary>
+				Serializes the given object to a JSON string.
+			</summary>
+			<param name="obj">The object to serialize.</param>
+			<param name="indented">A flag indicating whether to use indented formatting in the JSON string.</param>
+			<returns>A JSON string representation of the object.</returns>
+		</member>
+
+		<member name="M:Utils.ObjectExtensions.HasProperties">
+			<summary>
+				Checks if the object has any properties or data.
+			</summary>
+			<param name="obj">The object to check for properties.</param>
+			<returns>
+				<c>true</c> if the object has properties or data, otherwise <c>false</c>.
+			</returns>
+		</member>
+	</objectextensions>
+</doc>

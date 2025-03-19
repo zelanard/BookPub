@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<authors>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Controllers.AuthorsController">
+			<summary>
+				Handles API operations for managing <see cref="Author"/>s.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPub.Controllers.AuthorsController">
+			<summary>
+				Initializes a new instance of the <see cref="AuthorsController"/> class.
+			</summary>
+			<param name="context">
+				The database context for <see cref="Author"/> operations.
+			</param>
+			<param name="repo">The repository handling <see cref="Author"/> data.</param>
+		</member>
+
+		<!--Method Summaries-->
+		<methods>
+			<!--Create-->
+			<member name="M:BookPub.Controllers.AuthorsController.Create">
+				<summary>
+					Create an <see cref="Author"/> in the database.
+				</summary>
+				<param name="item">A JSON object with <see cref="Author"/> data.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+
+			<!--Delete-->
+			<member name="M:BookPub.Controllers.AuthorsController.Delete">
+				<summary>
+					Delete an <see cref="Author"/> from the database.
+				</summary>
+				<param name="id">
+					The ID of the <see cref="Author"/> to be deleted.
+				</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+
+			<!--Get-->
+			<member name="M:BookPub.Controllers.AuthorsController.Get">
+				<summary>
+					Retrieve a single <see cref="Author"/> from the database.
+				</summary>
+				<param name="id">
+					The ID of the <see cref="Author"/> to retrieve.
+				</param>
+				<returns>
+					An <see cref="IActionResult"/> containing the <see cref="Author"/> data.<br/>
+					On a success the IActionResult also contains the retrived <see cref="Author"/>.
+				</returns>
+			</member>
+
+			<!--Update-->
+			<member name="M:BookPub.Controllers.AuthorsController.Update">
+				<summary>
+					Update an <see cref="Author"/> in the database.
+				</summary>
+				<param name="id">
+					The ID of the <see cref="Author"/> to update.
+				</param>
+				<param name="item">
+					A JSON object with updated <see cref="Author"/> data.
+				</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+		</methods>
+	</authors>
+</doc>

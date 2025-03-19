@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<iitem>
+		<!-- Interface Summary -->
+		<member name="T:BookPubDB.Model.IItem">
+			<summary>
+				Represents an item that has a unique identifier.
+			</summary>
+		</member>
+
+		<!-- Properties -->
+		<member name="P:BookPubDB.Model.IItem.Id">
+			<summary>Gets or sets the unique identifier for the item.</summary>
+		</member>
+	</iitem>
+</doc>

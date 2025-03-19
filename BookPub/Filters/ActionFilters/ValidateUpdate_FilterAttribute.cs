@@ -1,12 +1,17 @@
-﻿using BookPub.Filters.ActionFilters.BaseFilters;
+﻿using BookPub.Filters.BaseFilters;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Newtonsoft.Json.Linq;
 
 namespace BookPub.Filters.ActionFilters
 {
-    public class ValidateUpdate_FilterAttribute(string name) : BaseFilterAttribute(name)
+    /// <include file='Documentation\Filters\ActionFilters\ValidateUpdate_FilterAttribute.xml' path='doc/validateupdate/member[@name="T:BookPub.Filters.ActionFilters.ValidateUpdate_FilterAttribute"]' />
+    public class ValidateUpdate_FilterAttribute : BaseFilterAttribute
     {
+        /// <include file='Documentation\Filters\ActionFilters\ValidateUpdate_FilterAttribute.xml' path='doc/validateupdate/member[@name="C:BookPub.Filters.ActionFilters.ValidateUpdate_FilterAttribute"]' />
+        public ValidateUpdate_FilterAttribute(RepoKey rkey) : base(rkey) { }
+
+        /// <include file='Documentation\Filters\ActionFilters\ValidateUpdate_FilterAttribute.xml' path='doc/validateupdate/member[@name="M:BookPub.Filters.ActionFilters.ValidateUpdate_FilterAttribute.OnActionExecuting"]' />
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             base.OnActionExecuting(context);
@@ -17,7 +22,7 @@ namespace BookPub.Filters.ActionFilters
 
             if (!id.HasValue)
             {
-                context.ModelState.AddModelError($"{Name}", "No id provided");
+                context.ModelState.AddModelError($"{RepositoryHandler.RKey}", "No id provided");
                 var problemDetails = new ValidationProblemDetails(context.ModelState)
                 {
                     Status = StatusCodes.Status400BadRequest
@@ -26,7 +31,7 @@ namespace BookPub.Filters.ActionFilters
             }
             else if (!success)
             {
-                context.ModelState.AddModelError($"{Name}", $"No {Name} object provided");
+                context.ModelState.AddModelError($"{RepositoryHandler.RKey}", $"No {RepositoryHandler.RKey} object provided");
                 var problemDetails = new ValidationProblemDetails(context.ModelState)
                 {
                     Status = StatusCodes.Status400BadRequest
@@ -35,7 +40,7 @@ namespace BookPub.Filters.ActionFilters
             }
             else if (id != itemId)
             {
-                context.ModelState.AddModelError($"{id}", $"The id of the provided {Name}: {itemId} is not the same as the provided id: {id}");
+                context.ModelState.AddModelError($"{id}", $"The id of the provided {RepositoryHandler.RKey}: {itemId} is not the same as the provided id: {id}");
                 var problemDetails = new ValidationProblemDetails(context.ModelState)
                 {
                     Status = StatusCodes.Status400BadRequest

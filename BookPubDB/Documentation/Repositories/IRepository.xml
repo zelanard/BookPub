@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<irepository>
+		<!-- Interface-level documentation for IRepository -->
+		<member name="T:BookPubDB.Repositories.IRepository`1">
+			<summary>
+				<c>IRepository</c> defines the contract for repositories that handle CRUD operations for a specific entity type.
+			</summary>
+			<typeparam name="T">
+				The type of the entity that this repository manages.
+			</typeparam>
+			<remarks>
+				This interface extends <see cref="IFilterRepository"/> and provides the basic operations needed to create, read, update, and delete entities in the data store.
+			</remarks>
+		</member>
+
+		<!-- Method-level documentation for CreateAsync -->
+		<member name="M:BookPubDB.Repositories.IRepository`1.CreateAsync(BookPubDB.Data.PublisherContext,System.Object)">
+			<summary>
+				Creates a new entity of type <typeparamref name="T"/> in the data store.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="model">The model containing data to create the entity.</param>
+			<returns>A task representing the asynchronous operation, containing the created entity.</returns>
+		</member>
+
+		<!-- Method-level documentation for DeleteAsync -->
+		<member name="M:BookPubDB.Repositories.IRepository`1.DeleteAsync(BookPubDB.Data.PublisherContext,System.Int32?)">
+			<summary>
+				Deletes an entity of type <typeparamref name="T"/> from the data store by its ID.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="id">The ID of the entity to delete.</param>
+			<returns>A task representing the asynchronous operation, containing the deleted entity.</returns>
+		</member>
+
+		<!-- Method-level documentation for GetAllAsync -->
+		<member name="M:BookPubDB.Repositories.IRepository`1.GetAllAsync(BookPubDB.Data.PublisherContext)">
+			<summary>
+				Gets all entities of type <typeparamref name="T"/> from the data store.
+			</summary>
+			<param name="context">The database context.</param>
+			<returns>A task representing the asynchronous operation, containing a list of all entities.</returns>
+		</member>
+
+		<!-- Method-level documentation for GetByIdAsync -->
+		<member name="M:BookPubDB.Repositories.IRepository`1.GetByIdAsync(BookPubDB.Data.PublisherContext,System.Int32)">
+			<summary>
+				Gets a specific entity of type <typeparamref name="T"/> by its ID.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="id">The ID of the entity to retrieve.</param>
+			<returns>A task representing the asynchronous operation, containing the entity with the specified ID, or null if not found.</returns>
+		</member>
+
+		<!-- Method-level documentation for UpdateAsync -->
+		<member name="M:BookPubDB.Repositories.IRepository`1.UpdateAsync(BookPubDB.Data.PublisherContext,System.Int32,System.Object)">
+			<summary>
+				Updates an existing entity of type <typeparamref name="T"/> in the data store.
+			</summary>
+			<param name="context">The database context.</param>
+			<param name="id">The ID of the entity to update.</param>
+			<param name="itemDto">The updated data for the entity.</param>
+			<returns>A task representing the asynchronous operation, containing the updated entity.</returns>
+		</member>
+	</irepository>
+</doc>

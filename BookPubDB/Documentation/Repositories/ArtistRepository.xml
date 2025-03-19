@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<artistrepository>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Repositories.ArtistRepository">
+			<summary>
+				Repository for handling CRUD operations related to the Artist entity.
+			</summary>
+		</member>
+
+		<!-- Methods Summaries -->
+		<member name="M:BookPubDB.Repositories.ArtistRepository.CreateAsync">
+			<summary>
+				Asynchronously creates a new Artist in the database.
+			</summary>
+			<param name="context">The database context used to interact with the database.</param>
+			<param name="data">The data to create a new artist, serialized in JSON format.</param>
+			<returns>A task that represents the asynchronous operation. The task result contains the created Artist object.</returns>
+		</member>
+		
+		<member name="M:BookPubDB.Repositories.ArtistRepository.DeleteAsync">
+			<summary>
+				Asynchronously deletes an Artist by ID from the database.
+			</summary>
+			<param name="context">The database context used to interact with the database.</param>
+			<param name="id">The ID of the artist to delete.</param>
+			<returns>A task that represents the asynchronous operation. The task result contains the deleted Artist object or null if not found.</returns>
+		</member>
+		
+		<member name="M:BookPubDB.Repositories.ArtistRepository.Exists(System.Int32?)">
+			<summary>
+				Checks whether an Artist exists in the database by its ID.
+			</summary>
+			<param name="id">The ID of the artist to check.</param>
+			<returns>A task that represents the asynchronous operation. The task result is true if the artist exists, otherwise false.</returns>
+		</member>
+		
+		<member name="M:BookPubDB.Repositories.ArtistRepository.GetAllAsync">
+			<summary>
+				Asynchronously retrieves all Artists from the database.
+			</summary>
+			<param name="context">The database context used to interact with the database.</param>
+			<returns>A task that represents the asynchronous operation. The task result is a list of all Artists in the database.</returns>
+		</member>
+		
+		<member name="M:BookPubDB.Repositories.ArtistRepository.GetByIdAsync">
+			<summary>
+				Asynchronously retrieves an Artist by its ID from the database, including its Covers.
+			</summary>
+			<param name="context">The database context used to interact with the database.</param>
+			<param name="id">The ID of the artist to retrieve.</param>
+			<returns>A task that represents the asynchronous operation. The task result contains the Artist object, or null if not found.</returns>
+		</member>
+		
+		<member name="M:BookPubDB.Repositories.ArtistRepository.UpdateAsync">
+			<summary>
+				Asynchronously updates an existing Artist's information in the database.
+			</summary>
+			<param name="context">The database context used to interact with the database.</param>
+			<param name="id">The ID of the artist to update.</param>
+			<param name="itemDto">The updated data of the artist, serialized in JSON format.</param>
+			<returns>A task that represents the asynchronous operation. The task result contains the updated Artist object or null in case of failure.</returns>
+		</member>
+		
+	</artistrepository>
+</doc>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<validateid>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Filters.ActionFilters.ValidateId_FilterAttribute">
+			<summary>
+				<c>ValidateId_FilterAttribute</c> Provides filters for incoming requests with an id.
+			</summary>
+		</member>
+
+		<member name="C:BookPub.Filters.ActionFilters.ValidateId_FilterAttribute">
+			<summary>
+				Initializes a new instance of the <see cref="ValidateId_FilterAttribute"/> class.
+			</summary>
+			<param name="rkey">
+				rkey is a <see cref="RepoKey"/> corresponding to the Reposity's Type parameter.
+			</param>
+		</member>
+
+		<member name="M:BookPub.Filters.ActionFilters.ValidateId_FilterAttribute.OnActionExecuting">
+			<summary>
+				Filters incoming requests and ensures that their id is valid.
+			</summary>
+			<param name="context">
+				The <see cref="ActionExecutingContext"/> for action filters.
+			</param>
+		</member>
+
+	</validateid>
+</doc>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<userrepository>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Repositories.UserRepository">
+			<summary>
+				The <c>UserRepository</c> class contains methods to handle user-related operations such as login and token generation.
+			</summary>
+			<remarks>
+				This class provides functionality for determining a user's login, whether by email or username, and generating a JWT token for authenticated users.
+			</remarks>
+		</member>
+
+		<!-- Method Summaries -->
+		<member name="M:BookPubDB.Repositories.UserRepository.DetermineLogin(BookPubDB.Model.Identity.LoginUser,Microsoft.AspNetCore.Identity.UserManager{Microsoft.AspNetCore.Identity.IdentityUser})">
+			<summary>
+				Determines the user's login by checking either their email or username.
+			</summary>
+			<param name="model">The login model containing the user's email or username.</param>
+			<param name="userManager">The user manager used to find the user by email or username.</param>
+			<returns>A task representing the asynchronous operation, containing the found user or null if not found.</returns>
+		</member>
+
+		<member name="M:BookPubDB.Repositories.UserRepository.GenerateJwtToken(Microsoft.AspNetCore.Identity.IdentityUser,Microsoft.Extensions.Configuration.IConfiguration)">
+			<summary>
+				Generates a JWT token for the specified user.
+			</summary>
+			<param name="user">The authenticated user for whom the JWT token will be generated.</param>
+			<param name="config">The configuration settings, used to retrieve JWT settings such as the secret key and expiration time.</param>
+			<returns>A string containing the generated JWT token.</returns>
+		</member>
+	</userrepository>
+</doc>

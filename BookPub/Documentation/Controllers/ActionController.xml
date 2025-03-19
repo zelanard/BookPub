@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<actions>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Controllers.ActionController">
+			<summary>
+				<c>ActionController</c> is an abstract generic API operations handler.
+			</summary>
+			<typeparam name="TType">The model to be used by the API</typeparam>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPub.Controllers.ActionController">
+			<summary>
+				Initializes a new instance of the <see cref="ActionController{TType}"/> base.
+			</summary>
+			<param name="context">The database context for entity operations.</param>
+			<param name="repo">
+				The <see cref="IRepository{TType}"/> handling entity data.
+			</param>
+		</member>
+
+		<!-- Property Summaries -->
+		<member name="P:BookPub.Controllers.ActionController.Context">
+			<summary>
+				Gets the <see cref="PublisherContext"/> for entity operations.
+			</summary>
+		</member>
+
+		<member name="P:BookPub.Controllers.ActionController.Repository">
+			<summary>
+				Gets the <see cref="IRepository{TType}"/> for handling entity data.
+			</summary>
+		</member>
+
+		<member name="P:BookPub.Controllers.ActionController.ResponseHandler">
+			<summary>
+				Gets the <see cref="HttpResponseGenerator{TType}"/> to generate accurate responses.
+			</summary>
+		</member>
+
+		<!-- Method Summaries -->
+		<methods>
+			<!-- Create -->
+			<member name="M:BookPub.Controllers.ActionController.Create">
+				<summary>
+					Create an entity in the database.
+				</summary>
+				<param name="item">A JSON object with model data.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+
+			<!-- Delete -->
+			<member name="M:BookPub.Controllers.ActionController.Delete">
+				<summary>
+					Delete an entity from the database.
+				</summary>
+				<param name="id">The ID of the entity to be deleted.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+
+			<!-- Get -->
+			<member name="M:BookPub.Controllers.ActionController.Get">
+				<summary>
+					Get a single entity from the database.
+				</summary>
+				<param name="id">The ID of the entity to retrieve.</param>
+				<returns>
+					An <see cref="IActionResult"/> containing the requested entity.<br/>
+					On a success the IActionResult also contains the retrived data.
+				</returns>
+			</member>
+
+			<!-- GetAll -->
+			<member name="M:BookPub.Controllers.ActionController.GetAll">
+				<summary>
+					Retrieve all entities from the database.
+				</summary>
+				<returns>
+					An <see cref="IActionResult"/> containing the list of entities.<br/>
+					On a success the IActionResult also contains the retrived data.
+				</returns>
+			</member>
+
+			<!-- Update -->
+			<member name="M:BookPub.Controllers.ActionController.Update">
+				<summary>
+					Update an entity in the database.
+				</summary>
+				<param name="id">The ID of the entity to update.</param>
+				<param name="item">A JSON object with updated model data.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+		</methods>
+	</actions>
+</doc>

@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<loginuser>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Model.Identity.LoginUser">
+			<summary>
+				Represents a user entity for authentication and identity management.
+			</summary>
+		</member>
+
+		<!-- Properties -->
+		<member name="P:BookPubDB.Model.Identity.LoginUser.Id">
+			<summary>Gets or sets the unique identifier for the user.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Identity.LoginUser.Login">
+			<summary>Gets or sets the username or login identifier for authentication.</summary>
+		</member>
+
+		<member name="P:BookPubDB.Model.Identity.LoginUser.Password">
+			<summary>Gets or sets the user's password. This property is masked for security.</summary>
+		</member>
+	</loginuser>
+</doc>

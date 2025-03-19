@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+    <httpresponsegenerator>
+        <!-- Class Summary -->
+        <member name="T:BookPub.Controllers.HttpResponseGenerator`1">
+            <summary>
+                Provides methods that generate <see cref="IActionResult"/> responses for different HTTP statuses.
+            </summary>
+            <typeparam name="TType">The type of the object being processed.</typeparam>
+        </member>
+
+        <!-- Constructor Summary -->
+        <member name="C:BookPub.Controllers.HttpResponseGenerator`1">
+            <summary>
+                Initializes a new instance of the <see cref="HttpResponseGenerator{TType}"/> class.
+            </summary>
+        </member>
+
+        <!--Method Summaries-->
+        <methods>
+            <!-- Created -->
+            <member name="M:BookPub.Controllers.HttpResponseGenerator`1.Created">
+                <summary>
+                    Generates a Created response if the result is not null, otherwise returns a BadRequest.
+                </summary>
+                <param name="result">The created object.</param>
+                <returns>An <see cref="IActionResult"/> indicating success or failure.</returns>
+            </member>
+
+            <!-- Deleted -->
+            <member name="M:BookPub.Controllers.HttpResponseGenerator`1.Deleted">
+                <summary>
+                    Generates a Deleted response if the result is not null, otherwise returns a BadRequest.
+                </summary>
+                <param name="result">The deleted object.</param>
+                <returns>An <see cref="IActionResult"/> indicating success or failure.</returns>
+            </member>
+
+            <!-- Ok (Single Object) -->
+            <member name="M:BookPub.Controllers.HttpResponseGenerator`1.Ok(TType)">
+                <summary>
+                    Generates an Ok response with a single object if the result is not null, otherwise returns NotFound.
+                </summary>
+                <param name="result">The object to return.</param>
+                <returns>An <see cref="IActionResult"/> containing the object or a NotFound result.</returns>
+            </member>
+
+            <!-- Ok (List of Objects) -->
+            <member name="M:BookPub.Controllers.HttpResponseGenerator`1.Ok(System.Collections.Generic.List{TType})">
+                <summary>
+                    Generates an Ok response with a list of objects if the result is not empty, otherwise returns BadRequest.
+                </summary>
+                <param name="result">The list of objects to return.</param>
+                <returns>An <see cref="IActionResult"/> containing the list or a BadRequest result.</returns>
+            </member>
+
+            <!-- Update -->
+            <member name="M:BookPub.Controllers.HttpResponseGenerator`1.Update">
+                <summary>
+                    Generates an Updated response if the result is not null, otherwise returns a BadRequest.
+                </summary>
+                <param name="result">The updated object.</param>
+                <returns>An <see cref="IActionResult"/> indicating success or failure.</returns>
+            </member>
+
+            <!-- GetIActionResult -->
+            <member name="M:BookPub.Controllers.HttpResponseGenerator`1.GetIActionResult">
+                <summary>
+                    Generates an <see cref="IActionResult"/> based on the provided <see cref="ActionResultStatus"/>.
+                </summary>
+                <param name="type">The object to include in the response.</param>
+                <param name="ars">The action result status to determine the response type.</param>
+                <returns>An <see cref="IActionResult"/> corresponding to the status.</returns>
+            </member>
+        </methods>
+    </httpresponsegenerator>
+</doc>

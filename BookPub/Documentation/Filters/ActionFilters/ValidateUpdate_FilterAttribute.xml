@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<validateupdate>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Filters.ActionFilters.ValidateUpdate_FilterAttribute">
+			<summary>
+				<c>ValidateUpdate_FilterAttribute</c> Provides filters for incoming update requests.
+			</summary>
+		</member>
+
+		<member name="C:BookPub.Filters.ActionFilters.ValidateUpdate_FilterAttribute">
+			<summary>
+				Initializes a new instance of the <see cref="ValidateUpdate_FilterAttribute"/> class.
+			</summary>
+			<param name="rkey">
+				rkey is a <see cref="RepoKey"/> corresponding to the Reposity's Type parameter.
+			</param>
+		</member>
+
+		<member name="M:BookPub.Filters.ActionFilters.ValidateUpdate_FilterAttribute.OnActionExecuting">
+			<summary>
+				Filters incoming update requests and ensures that:<br/>
+				&#x2800; &#8226; <b>Change id:</b> an id for the item to change has been provided, <br/>
+				&#x2800; &#8226; <b>Item id:</b> the incomming item has an id, <br/>
+				&#x2800; &#8226; <b>Match:</b> the change id and the item id match.
+			</summary>
+			<param name="context">
+				The <see cref="ActionExecutingContext"/> for action filters.
+			</param>
+			<remarks>
+				The &amp;#x2800; character is an empty braile character which therefore looks like whitespace without being white space.
+				In these xml documents, it is perfect for indentation, as all other white space characters are ignored.
+			</remarks>
+		</member>
+
+	</validateupdate>
+</doc>

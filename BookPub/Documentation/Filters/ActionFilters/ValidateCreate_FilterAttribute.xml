@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<validatecreate>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Filters.ActionFilters.ValidateCreate_FilterAttribute">
+			<summary>
+				<c>ValidateCreate_FilterAttribute</c> Provides filters for incoming create requests.
+			</summary>
+		</member>
+
+		<member name="C:BookPub.Filters.ActionFilters.ValidateCreate_FilterAttribute">
+			<summary>
+				Initializes a new instance of the <see cref="ValidateCreate_FilterAttribute"/> class.
+			</summary>
+			<param name="rkey">
+				rkey is a <see cref="RepoKey"/> corresponding to the Reposity's Type parameter.
+			</param>
+		</member>
+
+		<member name="M:BookPub.Filters.ActionFilters.ValidateCreate_FilterAttribute.OnActionExecuting">
+			<summary>
+				Filters incoming create requests and ensures that they are not null or empty.
+			</summary>
+			<param name="context">
+				The <see cref="ActionExecutingContext"/> for action filters.
+			</param>
+		</member>
+
+	</validatecreate>
+</doc>

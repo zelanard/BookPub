@@ -2,21 +2,24 @@
 using BookPubDB.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
 
 namespace BookPub.Controllers
 {
+    /// <include file='Documentation/Controllers/AuthController.xml' path='doc/authcontroller/member[@name="T:BookPub.Controllers.AuthController"]' />
     [ApiController]
     [Route("api/authenticate")]
     public class AuthController : ControllerBase
     {
+        /// <include file='Documentation/Controllers/AuthController.xml' path='doc/authcontroller/member[@name="F:BookPub.Controllers.AuthController.UserManager"]' />
         private readonly UserManager<IdentityUser> UserManager;
+
+        /// <include file='Documentation/Controllers/AuthController.xml' path='doc/authcontroller/member[@name="F:BookPub.Controllers.AuthController.SignInManager"]' />
         private readonly SignInManager<IdentityUser> SignInManager;
+
+        /// <include file='Documentation/Controllers/AuthController.xml' path='doc/authcontroller/member[@name="F:BookPub.Controllers.AuthController.Repository"]' />
         private readonly UserRepository Repository;
 
+        /// <include file='Documentation/Controllers/AuthController.xml' path='doc/authcontroller/member[@name="C:BookPub.Controllers.AuthController"]' />
         public AuthController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
         {
             UserManager = userManager;
@@ -24,6 +27,7 @@ namespace BookPub.Controllers
             Repository = new();
         }
 
+        /// <include file='Documentation/Controllers/AuthController.xml' path='doc/authcontroller/methods/member[@name="M:BookPub.Controllers.AuthController.Register"]' />
         [HttpPost("register")]
         public async Task<IActionResult> Register([FromBody] User model)
         {
@@ -42,7 +46,7 @@ namespace BookPub.Controllers
             return BadRequest(result.Errors);
         }
 
-
+        /// <include file='Documentation/Controllers/AuthController.xml' path='doc/authcontroller/methods/member[@name="M:BookPub.Controllers.AuthController.Login"]' />
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginUser model, [FromServices] IConfiguration config)
         {

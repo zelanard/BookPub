@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<identitycontext>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Data.IdentityContext">
+			<summary>
+				This class represents the database context for managing identity-related data,
+				derived from <see cref="Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityDbContext{TUser}"/>.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPubDB.Data.IdentityContext">
+			<summary>
+				Initializes a new instance of the <see cref="BookPubDB.Data.IdentityContext"/> class with the specified
+				<see cref="Microsoft.EntityFrameworkCore.DbContextOptions{TContext}"/> options.
+				This constructor is provided by the dependency injection container and does not require any parameters.
+			</summary>
+			<param name="options">
+				The options to be used by the <see cref="Microsoft.EntityFrameworkCore.DbContext"/>.
+			</param>
+		</member>
+
+		<methods>
+			<!-- OnModelCreating Summary -->
+			<member name="M:BookPubDB.Data.IdentityContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+				<summary>
+					Overrides the <see cref="Microsoft.EntityFrameworkCore.DbContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)"/> method
+					to configure the entity model. This method is used to configure entity relationships, set table and column names,
+					and add custom constraints or configurations. By default, it calls the base implementation
+					to apply configurations for identity-related entities.
+				</summary>
+				<param name="builder">
+					A <see cref="Microsoft.EntityFrameworkCore.ModelBuilder"/> object that provides the API to configure entity types.
+				</param>
+			</member>
+
+			<!-- OnConfiguring Summary -->
+			<member name="M:BookPubDB.Data.IdentityContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+				<summary>
+					Overrides the <see cref="Microsoft.EntityFrameworkCore.DbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)"/>
+					method to configure the database connection and enable logging and sensitive data logging for database commands.
+					The method configures the use of a local SQL Server instance with the specified connection string
+					and migration assembly.
+				</summary>
+				<param name="optionsBuilder">
+					The <see cref="Microsoft.EntityFrameworkCore.DbContextOptionsBuilder"/> used to configure the database context options,
+					including the database provider and connection string.
+				</param>
+			</member>
+		</methods>
+
+	</identitycontext>
+</doc>

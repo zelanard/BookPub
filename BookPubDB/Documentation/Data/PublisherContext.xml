@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<publishercontext>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.Data.PublisherContext">
+			<summary>
+				This class represents the database context for managing publisher-related data,
+				including authors, books, artists, and covers. It is derived from <see cref="Microsoft.EntityFrameworkCore.DbContext"/>.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPubDB.Data.PublisherContext">
+			<summary>
+				Initializes a new instance of the <see cref="BookPubDB.Data.PublisherContext"/> class.
+				This constructor is provided by the dependency injection container and does not require any parameters.
+			</summary>
+		</member>
+
+		<!-- Books Property Summaries -->
+		<member name="P:BookPubDB.Data.PublisherContext.Authors">
+			<summary>
+				Gets or sets the <see cref="Microsoft.EntityFrameworkCore.DbSet{TEntity}"/> for the <see cref="BookPubDB.Model.Author"/> entities.
+			</summary>
+		</member>
+
+		<member name="P:BookPubDB.Data.PublisherContext.Books">
+			<summary>
+				Gets or sets the <see cref="Microsoft.EntityFrameworkCore.DbSet{TEntity}"/> for the <see cref="BookPubDB.Model.Book"/> entities.
+			</summary>
+		</member>
+
+		<member name="P:BookPubDB.Data.PublisherContext.Artists">
+			<summary>
+				Gets or sets the <see cref="Microsoft.EntityFrameworkCore.DbSet{TEntity}"/> for the <see cref="BookPubDB.Model.Artist"/> entities.
+			</summary>
+		</member>
+
+		<member name="P:BookPubDB.Data.PublisherContext.Covers">
+			<summary>
+				Gets or sets the <see cref="Microsoft.EntityFrameworkCore.DbSet{TEntity}"/> for the <see cref="BookPubDB.Model.Cover"/> entities.
+			</summary>
+		</member>
+
+		<!-- OnConfiguring Summary -->
+		<methods>
+			<member name="M:BookPubDB.Data.PublisherContext.OnConfiguring">
+				<summary>
+					Overrides the <see cref="Microsoft.EntityFrameworkCore.DbContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)"/>
+					method to configure the database connection. This method sets up the use of a local SQL Server instance with
+					the specified connection string and migration assembly, and enables logging and sensitive data logging for database commands.
+				</summary>
+				<param name="optionsBuilder">
+					The <see cref="Microsoft.EntityFrameworkCore.DbContextOptionsBuilder"/> used to configure the database context options,
+					including the database provider and connection string.
+				</param>
+			</member>
+		</methods>
+
+	</publishercontext>
+</doc>

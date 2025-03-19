@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<doc>
+	<bookdto>
+		<!-- Class Summary -->
+		<member name="T:BookPubDB.DTOs.BookDto">
+			<summary>
+				Represents a data transfer object (DTO) for a book. This DTO is used to transfer book-related
+				data between different layers of the application while maintaining encapsulation and separation
+				of concerns.
+			</summary>
+		</member>
+
+		<!-- Title Property Summary -->
+		<member name="P:BookPubDB.DTOs.BookDto.Title">
+			<summary>
+				Gets or sets the title of the book.
+			</summary>
+		</member>
+
+		<!-- PublishDate Property Summary -->
+		<member name="P:BookPubDB.DTOs.BookDto.PublishDate">
+			<summary>
+				Gets or sets the date when the book was published.
+			</summary>
+		</member>
+
+		<!-- BasePrice Property Summary -->
+		<member name="P:BookPubDB.DTOs.BookDto.BasePrice">
+			<summary>
+				Gets or sets the base price of the book.
+			</summary>
+		</member>
+
+		<!-- AuthorId Property Summary -->
+		<member name="P:BookPubDB.DTOs.BookDto.AuthorId">
+			<summary>
+				Gets or sets the unique identifier of the author associated with the book.
+			</summary>
+		</member>
+	</bookdto>
+</doc>

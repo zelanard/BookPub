@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<artists>
+		<!-- Class Summary -->
+		<member name="T:BookPub.Controllers.ArtistController">
+			<summary>
+				Handles API operations for managing <see cref="Artist"/>s.
+			</summary>
+		</member>
+
+		<!-- Constructor Summary -->
+		<member name="C:BookPub.Controllers.ArtistController">
+			<summary>
+				Initializes a new instance of the <see cref="ArtistController"/> class.
+			</summary>
+			<param name="context">
+				The database context for <see cref="Artist"/> operations.
+			</param>
+			<param name="repo">The repository handling <see cref="Artist"/> data.</param>
+		</member>
+
+		<!--Method Summaries-->
+		<methods>
+			<!--Create-->
+			<member name="M:BookPub.Controllers.ArtistController.Create">
+				<summary>
+					Create an <see cref="Artist"/> in the database.
+				</summary>
+				<param name="item">A JSON object with <see cref="Artist"/> data.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+
+			<!--Delete-->
+			<member name="M:BookPub.Controllers.ArtistController.Delete">
+				<summary>
+					Delete an <see cref="Artist"/> from the database.
+				</summary>
+				<param name="id">The ID of the <see cref="Artist"/> to be deleted.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+
+			<!--Get-->
+			<member name="M:BookPub.Controllers.ArtistController.Get">
+				<summary>
+					Retrieve a single <see cref="Artist"/> from the database.
+				</summary>
+				<param name="id">The ID of the <see cref="Artist"/> to retrieve.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.<br/>
+					On a success the IActionResult also contains the retrived <see cref="Artist"/>.
+				</returns>
+			</member>
+
+			<!--Update-->
+			<member name="M:BookPub.Controllers.ArtistController.Update">
+				<summary>
+					Update an <see cref="Artist"/> in the database.
+				</summary>
+				<param name="id">The ID of the <see cref="Artist"/> to update.</param>
+				<param name="item">A JSON object with updated <see cref="Artist"/> data.</param>
+				<returns>
+					An <see cref="IActionResult"/> showing the success state of the request.
+				</returns>
+			</member>
+		</methods>
+	</artists>
+</doc>

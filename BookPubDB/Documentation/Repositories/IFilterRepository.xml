@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+	<ifilterrepository>
+		<!-- Interface Summary -->
+		<member name="T:BookPubDB.Repositories.IFilterRepository">
+			<summary>
+				<c>IFilterRepository</c> defines a contract for repositories that need to implement filtering logic.
+			</summary>
+			<remarks>
+				This interface provides an abstraction for filtering logic, particularly useful for checking the existence of entities.
+			</remarks>
+		</member>
+
+		<!-- Method Summary -->
+		<member name="M:BookPubDB.Repositories.IFilterRepository.Exists(System.Int32?)">
+			<summary>
+				Checks whether an entity with the specified <paramref name="id"/> exists.
+			</summary>
+			<param name="id">The ID of the entity to check for existence.</param>
+			<returns>A task that represents the asynchronous operation, containing a boolean indicating whether the entity exists.</returns>
+			<remarks>
+				This method should be implemented in a repository to determine the existence of an entity in a data store.
+			</remarks>
+		</member>
+	</ifilterrepository>
+</doc>
