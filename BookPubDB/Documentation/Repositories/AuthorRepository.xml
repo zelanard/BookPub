@@ -22,31 +22,6 @@
 			<returns>A task that represents the asynchronous operation. The task result contains the created Author object.</returns>
 		</member>
 
-		<member name="M:BookPubDB.Repositories.AuthorRepository.DeleteAsync">
-			<summary>
-				Asynchronously deletes an Author by ID from the database.
-			</summary>
-			<param name="context">The database context used to interact with the database.</param>
-			<param name="id">The ID of the author to delete.</param>
-			<returns>A task that represents the asynchronous operation. The task result contains the deleted Author object or null if not found.</returns>
-		</member>
-
-		<member name="M:BookPubDB.Repositories.AuthorRepository.Exists">
-			<summary>
-				Checks whether an Author exists in the database by its ID.
-			</summary>
-			<param name="id">The ID of the author to check.</param>
-			<returns>A task that represents the asynchronous operation. The task result is true if the author exists, otherwise false.</returns>
-		</member>
-
-		<member name="M:BookPubDB.Repositories.AuthorRepository.GetAllAsync">
-			<summary>
-				Asynchronously retrieves all Authors from the database.
-			</summary>
-			<param name="context">The database context used to interact with the database.</param>
-			<returns>A task that represents the asynchronous operation. The task result is a list of all Authors in the database.</returns>
-		</member>
-
 		<member name="M:BookPubDB.Repositories.AuthorRepository.GetByIdAsync">
 			<summary>
 				Asynchronously retrieves an Author by its ID from the database, including its associated Books.

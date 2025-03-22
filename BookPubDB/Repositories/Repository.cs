@@ -11,14 +11,34 @@ namespace BookPubDB.Repositories
         public abstract Task<T?> CreateAsync(PublisherContext context, object model);
 
         /// <include file = 'Documentation/Repositories/Repository.xml' path='doc/repository/member[@name="M:BookPubDB.Repositories.Repository`1.DeleteAsync(BookPubDB.Data.PublisherContext,System.Int32?)"]' />
-        public abstract Task<T?> DeleteAsync(PublisherContext context, int? id);
+        public async virtual Task<T?> DeleteAsync(PublisherContext context, int? id)
+        {
+            var dbSet = context.Set<T>();
+            T? item = dbSet.Find(id);
+
+            if (item == null)
+                return null;
+
+            dbSet.Remove(item);
+            int changes = await context.SaveChangesAsync();
+
+            return GetSuccessState(item, changes);
+        }
 
         /// <include file = 'Documentation/Repositories/Repository.xml' path='doc/repository/member[@name="M:BookPubDB.Repositories.Repository`1.Exists(System.Int32?)"]' />
-        public abstract Task<bool> Exists(int? id);
+        public async virtual Task<bool> Exists(int? id)
+        {
+            PublisherContext context = new();
+            var dbSet = context.Set<T>();
+            return await dbSet.AnyAsync(x => EF.Property<int>(x, "Id") == id);
+        }
 
         /// <include file = 'Documentation/Repositories/Repository.xml' path='doc/repository/member[@name="M:BookPubDB.Repositories.Repository`1.GetAllAsync(BookPubDB.Data.PublisherContext)"]' />
-        public abstract Task<List<T>> GetAllAsync(PublisherContext context);
-
+        public async virtual Task<List<T>> GetAllAsync(PublisherContext context)
+        {
+            var dbSet = context.Set<T>();
+            return dbSet.ToList<T>();
+        }
         /// <include file = 'Documentation/Repositories/Repository.xml' path='doc/repository/member[@name="M:BookPubDB.Repositories.Repository`1.GetByIdAsync(BookPubDB.Data.PublisherContext,System.Int32)"]' />
         public abstract Task<T?> GetByIdAsync(PublisherContext context, int id);
 

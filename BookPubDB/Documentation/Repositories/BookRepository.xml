@@ -22,31 +22,6 @@
 			<returns>A task that represents the asynchronous operation. The task result contains the created Book object.</returns>
 		</member>
 
-		<member name="M:BookPubDB.Repositories.BookRepository.DeleteAsync">
-			<summary>
-				Asynchronously deletes a Book by ID from the database.
-			</summary>
-			<param name="context">The database context used to interact with the database.</param>
-			<param name="id">The ID of the book to delete.</param>
-			<returns>A task that represents the asynchronous operation. The task result contains the deleted Book object or null if not found.</returns>
-		</member>
-
-		<member name="M:BookPubDB.Repositories.BookRepository.Exists(System.Int32?)">
-			<summary>
-				Checks whether a Book exists in the database by its ID.
-			</summary>
-			<param name="id">The ID of the book to check.</param>
-			<returns>A task that represents the asynchronous operation. The task result is true if the book exists, otherwise false.</returns>
-		</member>
-
-		<member name="M:BookPubDB.Repositories.BookRepository.GetAllAsync">
-			<summary>
-				Asynchronously retrieves all Books from the database.
-			</summary>
-			<param name="context">The database context used to interact with the database.</param>
-			<returns>A task that represents the asynchronous operation. The task result is a list of all Books in the database.</returns>
-		</member>
-
 		<member name="M:BookPubDB.Repositories.BookRepository.GetByIdAsync">
 			<summary>
 				Asynchronously retrieves a Book by its ID from the database, including its associated Author and Cover information.

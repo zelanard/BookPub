@@ -31,51 +31,6 @@
 			</remarks>
 		</member>
 
-		<member name="M:BookPubDB.Repositories.CoverRepository.DeleteAsync">
-			<summary>
-				Deletes the cover with the specified <paramref name="id"/>.
-			</summary>
-			<param name="context">
-				The <see cref="PublisherContext"/> to interact with the database.
-			</param>
-			<param name="id">The ID of the cover to delete.</param>
-			<returns>
-				A task that represents the asynchronous operation, containing the deleted <see cref="Cover"/> or null if not found.
-			</returns>
-			<exception cref="ArgumentNullException">
-				Thrown if the cover cannot be found by the provided <paramref name="id"/>.
-			</exception>
-			<remarks>
-				If the cover exists, it is removed from the context and changes are saved. If not found, the method returns null.
-			</remarks>
-		</member>
-
-		<member name="M:BookPubDB.Repositories.CoverRepository.Exists">
-			<summary>
-				Checks whether a cover with the specified <paramref name="id"/> exists in the database.
-			</summary>
-			<param name="id">The ID of the cover to check.</param>
-			<returns>A task that represents the asynchronous operation, returning a boolean indicating if the cover exists.</returns>
-			<remarks>
-				This method performs a simple lookup in the database to check for the existence of the cover.
-			</remarks>
-		</member>
-
-		<member name="M:BookPubDB.Repositories.CoverRepository.GetAllAsync">
-			<summary>
-				Retrieves all covers from the database.
-			</summary>
-			<param name="context">
-				The <see cref="PublisherContext"/> to interact with the database.
-			</param>
-			<returns>
-				A task that represents the asynchronous operation, containing a list of <see cref="Cover"/> objects.
-			</returns>
-			<remarks>
-				The method retrieves all covers stored in the context and returns them as a list.
-			</remarks>
-		</member>
-
 		<member name="M:BookPubDB.Repositories.CoverRepository.GetByIdAsync">
 			<summary>
 				Retrieves the cover with the specified <paramref name="id"/>.

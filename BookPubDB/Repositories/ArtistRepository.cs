@@ -25,33 +25,6 @@ namespace BookPubDB.Repositories
             return GetSuccessState(artist, changes);
         }
 
-        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.DeleteAsync"]' />
-        public async override Task<Artist?> DeleteAsync(PublisherContext context, int? id)
-        {
-            Artist? artist = context.Artists.Find(id);
-
-            if (artist == null)
-                return null;
-
-            context.Artists.Remove(artist);
-            int changes = await context.SaveChangesAsync();
-
-            return GetSuccessState(artist, changes);
-        }
-
-        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.Exists"]' />
-        public async override Task<bool> Exists(int? id)
-        {
-            PublisherContext context = new();
-            return context.Artists.Any(x => x.Id == id);
-        }
-
-        /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.GetAllAsync"]' />
-        public async override Task<List<Artist>> GetAllAsync(PublisherContext context)
-        {
-            return context.Artists.ToList<Artist>();
-        }
-
         /// <include file='Documentation/Repositories/ArtistRepository.xml' path='doc/artistrepository/member[@name="M:BookPubDB.Repositories.ArtistRepository.GetByIdAsync"]' />
         public async override Task<Artist?> GetByIdAsync(PublisherContext context, int id)
         {

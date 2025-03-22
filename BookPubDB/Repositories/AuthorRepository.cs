@@ -26,33 +26,6 @@ namespace BookPubDB.Repositories
             return GetSuccessState(author, changes);
         }
 
-        /// <include file = 'Documentation/Repositories/AuthorRepository.xml' path='doc/authorrepository/member[@name="M:BookPubDB.Repositories.AuthorRepository.DeleteAsync"]' />
-        public async override Task<Author?> DeleteAsync(PublisherContext context, int? id)
-        {
-            Author? author = context.Authors.Find(id);
-
-            if (author == null)
-                return null;
-
-            context.Authors.Remove(author);
-            int changes = await context.SaveChangesAsync();
-
-            return GetSuccessState(author, changes);
-        }
-
-        /// <include file = 'Documentation/Repositories/AuthorRepository.xml' path='doc/authorrepository/member[@name="M:BookPubDB.Repositories.AuthorRepository.Exists"]' />
-        public async override Task<bool> Exists(int? id)
-        {
-            PublisherContext context = new();
-            return context.Authors.Any(x => x.Id == id);
-        }
-
-        /// <include file = 'Documentation/Repositories/AuthorRepository.xml' path='doc/authorrepository/member[@name="M:BookPubDB.Repositories.AuthorRepository.GetAllAsync"]' />
-        public async override Task<List<Author>> GetAllAsync(PublisherContext context)
-        {
-            return context.Authors.ToList<Author>(); //returns the list of authors
-        }
-
         /// <include file = 'Documentation/Repositories/AuthorRepository.xml' path='doc/authorrepository/member[@name="M:BookPubDB.Repositories.AuthorRepository.GetByIdAsync"]' />
         public async override Task<Author?> GetByIdAsync(PublisherContext context, int id)
         {

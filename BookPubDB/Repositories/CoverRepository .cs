@@ -30,33 +30,6 @@ namespace BookPubDB.Repositories
             return GetSuccessState(cover, changes);
         }
 
-        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.DeleteAsync"]' />
-        public async override Task<Cover?> DeleteAsync(PublisherContext context, int? id)
-        {
-            Cover? cover = context.Covers.Find(id);
-
-            if (cover == null)
-                return null;
-
-            context.Covers.Remove(cover);
-            int changes = await context.SaveChangesAsync();
-
-            return GetSuccessState(cover, changes);
-        }
-
-        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.Exists"]' />
-        public async override Task<bool> Exists(int? id)
-        {
-            PublisherContext context = new();
-            return context.Covers.Any(x => x.Id == id);
-        }
-
-        /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.GetAllAsync"]' />
-        public async override Task<List<Cover>> GetAllAsync(PublisherContext context)
-        {
-            return context.Covers.ToList<Cover>(); //returns the list of Covers
-        }
-
         /// <include file = 'Documentation/Repositories/CoverRepository.xml' path='doc/coverrepository/member[@name="M:BookPubDB.Repositories.CoverRepository.GetByIdAsync"]' />
         public async override Task<Cover?> GetByIdAsync(PublisherContext context, int id)
         {
