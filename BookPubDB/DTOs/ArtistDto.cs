@@ -1,6 +1,4 @@
-﻿using static System.Formats.Asn1.AsnWriter;
-
-namespace BookPubDB.DTOs
+﻿namespace BookPubDB.DTOs
 {
     /// <include file='Documentation/DTOs/ArtistDto.xml' path='doc/artistdto/member[@name="T:BookPubDB.DTOs.ArtistDto"]' />
     public class ArtistDto

@@ -1,9 +1,11 @@
 ﻿using BookPubDB.Data;
+using BookPubDB.Model;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookPubDB.Repositories
 {
     /// <include file = 'Documentation/Repositories/Repository.xml' path='doc/repository/member[@name="T:BookPubDB.Repositories.Repository`1"]' />
-    public abstract class Repository<T> : IRepository<T>
+    public abstract class Repository<T> : IRepository<T> where T : class
     {
         /// <include file = 'Documentation/Repositories/Repository.xml' path='doc/repository/member[@name="M:BookPubDB.Repositories.Repository`1.CreateAsync(BookPubDB.Data.PublisherContext,System.Object)"]' />
         public abstract Task<T?> CreateAsync(PublisherContext context, object model);
